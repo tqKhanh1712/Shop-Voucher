@@ -1,0 +1,21 @@
+code,name_vi,parent_code,external_source,external_id,display_order,is_active
+FOOD_DRINK,Ẩm thực & Đồ uống,,,,10,true
+SHOPPING_RETAIL,Mua sắm & Bán lẻ,,,,20,true
+BEAUTY_HEALTH,Làm đẹp & Sức khỏe,,,,30,true
+DIGITAL_TELECOM,Kỹ thuật số & Viễn thông,,,,40,true
+ENTERTAINMENT,Giải trí,,,,50,true
+LIFESTYLE_SERVICES,Phong cách sống & Dịch vụ,,,,60,true
+TRANSPORT,Di chuyển,,,,70,true
+OTHER,Khác,,,,80,true
+GIFTPOP_VN_A101,Cà phê - Trà,FOOD_DRINK,giftpop.vn,A101,101,true
+GIFTPOP_VN_A103,Bánh ngọt,FOOD_DRINK,giftpop.vn,A103,103,true
+GIFTPOP_VN_A107,Pizza,FOOD_DRINK,giftpop.vn,A107,107,true
+GIFTPOP_VN_A106,Gà rán & Thức ăn nhanh,FOOD_DRINK,giftpop.vn,A106,106,true
+GIFTPOP_VN_A108,Thời trang,SHOPPING_RETAIL,giftpop.vn,A108,108,true
+GIFTPOP_VN_A117,Siêu thị & Cửa hàng tiện lợi,SHOPPING_RETAIL,giftpop.vn,A117,117,true
+GIFTPOP_VN_A119,Voucher Book,LIFESTYLE_SERVICES,giftpop.vn,A119,119,true
+GIFTPOP_VN_A110,Tiệm làm tóc & Spa,BEAUTY_HEALTH,giftpop.vn,A110,110,true
+GIFTPOP_VN_A112,Sức khỏe & Nha khoa,BEAUTY_HEALTH,giftpop.vn,A112,112,true
+GIFTPOP_VN_A115,Rạp chiếu phim,ENTERTAINMENT,giftpop.vn,A115,115,true
+GIFTPOP_VN_A116,Vui chơi & Giải trí,ENTERTAINMENT,giftpop.vn,A116,116,true
+GIFTPOP_VN_A120,Phong cách sống,LIFESTYLE_SERVICES,giftpop.vn,A120,120,true

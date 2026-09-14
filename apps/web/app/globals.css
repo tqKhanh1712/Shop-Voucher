@@ -1,0 +1,195 @@
+@import "tailwindcss";
+@import "./tw-animate.css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--brand-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-subtle: var(--brand-subtle);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-muted: var(--muted-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-success: var(--success);
+  --color-success-subtle: var(--success-subtle);
+  --color-warning: var(--warning);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-danger: var(--danger);
+  --color-danger-subtle: var(--danger-subtle);
+  --color-destructive: var(--destructive);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-ui-sm: var(--ec-radius-sm);
+  --radius-ui-md: var(--ec-radius-md);
+  --radius-ui-lg: var(--ec-radius-lg);
+  --shadow-ui: var(--ec-shadow-subtle);
+  --shadow-ui-raised: var(--ec-shadow-raised);
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, span, div, label, input, textarea, select, button, a {
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2rem, 2vw, 2.5rem) !important; }
+h2 { font-size: clamp(1.6rem, 1.6vw, 2rem) !important; }
+h3 { font-size: clamp(1.3rem, 1.4vw, 1.6rem) !important; }
+h4 { font-size: 1.2rem !important; }
+h5 { font-size: 1.08rem !important; }
+h6 { font-size: 1rem !important; }
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes hero-float-delayed {
+  0%, 100% { transform: translateY(0) rotate(1deg); }
+  50% { transform: translateY(7px) rotate(-1deg); }
+}
+
+@keyframes receipt-scan {
+  0%, 100% { transform: translateY(0); opacity: .45; }
+  50% { transform: translateY(42px); opacity: 1; }
+}
+
+.hero-float { animation: hero-float 6s ease-in-out infinite; }
+.hero-float-delayed { animation: hero-float-delayed 5.5s ease-in-out 700ms infinite; }
+.receipt-scan { animation: receipt-scan 2.6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-float,
+  .hero-float-delayed,
+  .receipt-scan { animation: none; }
+}
+
+.text-xs { font-size: 0.8125rem !important; }
+.text-sm { font-size: 0.9375rem !important; }
+.text-base { font-size: 1.0625rem !important; }
+.text-lg { font-size: 1.2rem !important; }
+.text-xl { font-size: 1.45rem !important; }
+.text-2xl { font-size: 1.9rem !important; }
+.text-3xl { font-size: 2.35rem !important; }
+.text-4xl { font-size: 2.8rem !important; }
+
+button,
+input,
+textarea,
+select,
+label,
+small,
+strong,
+span,
+a,
+p,
+li,
+div {
+  font-size: inherit;
+}
+
+/* Hide native browser password eye and clear buttons */
+input::-ms-reveal,
+input::-ms-clear,
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Custom styling for HTML5 QR Code Scanner elements to fit VoucherNow design */
+#qr-reader {
+  border: none !important;
+  padding: 0 !important;
+}
+#qr-reader img {
+  display: none;
+}
+#qr-reader__dashboard_section_csr button,
+#qr-reader__dashboard_section_csr a {
+  background-color: var(--brand) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: var(--ec-radius-sm) !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.75rem !important;
+  font-weight: bold !important;
+  cursor: pointer;
+  transition: background-color var(--duration-normal) var(--ease-standard);
+  display: inline-block;
+  margin: 5px;
+}
+#qr-reader__dashboard_section_csr button:hover {
+  background-color: var(--brand-hover) !important;
+}
+#qr-reader select {
+  border: 1px solid var(--border) !important;
+  background-color: white !important;
+  border-radius: var(--ec-radius-sm) !important;
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+  color: var(--foreground) !important;
+  outline: none;
+}
+#qr-reader__status_span {
+  font-size: 0.75rem !important;
+  color: var(--muted-foreground) !important;
+}
+#html5-qrcode-anchor-scan-type-change {
+  color: var(--brand) !important;
+  font-size: 0.75rem !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+}
+#qr-reader__header_message {
+  font-size: 0.75rem !important;
+  color: var(--foreground) !important;
+}
+#qr-reader__scan_region {
+  background-color: #000000 !important;
+  border-radius: var(--ec-radius-md) !important;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "source": "giftpop.vn",
+  "robotsUrl": "https://www.giftpop.vn/robots.txt",
+  "robotsPolicy": "not-published-http-404",
+  "authorizationBasis": "Non-commercial educational permission confirmed by the project owner.",
+  "crawledAt": "2026-08-19T12:59:37.326Z",
+  "requestedProducts": 5,
+  "acceptedProducts": 5,
+  "selectedBranches": 10,
+  "errors": 0,
+  "rateLimitMilliseconds": 900,
+  "timeoutMilliseconds": 15000,
+  "maxAttempts": 3
+}

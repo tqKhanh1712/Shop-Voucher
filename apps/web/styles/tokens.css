@@ -1,0 +1,61 @@
+:root {
+  /* Surfaces */
+  --background: #f7f7f5;
+  --surface: #ffffff;
+  --surface-subtle: #f1f1ee;
+  --surface-inverse: #181817;
+
+  /* Text */
+  --foreground: #181817;
+  --muted-foreground: #706f6b;
+  --inverse-foreground: #ffffff;
+
+  /* Brand */
+  --brand: #e94f2d;
+  --brand-hover: #d94324;
+  --brand-subtle: #fff3ef;
+  --brand-foreground: #ffffff;
+
+  /* Accessible UI primitive aliases */
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
+  --primary: var(--brand);
+  --primary-foreground: var(--brand-foreground);
+  --secondary: var(--brand-subtle);
+  --secondary-foreground: var(--brand);
+  --muted: var(--surface-subtle);
+  --accent: var(--brand-subtle);
+  --accent-foreground: var(--foreground);
+
+  /* Semantic states */
+  --success: #15803d;
+  --success-subtle: #f0fdf4;
+  --warning: #a16207;
+  --warning-subtle: #fefce8;
+  --danger: #dc2626;
+  --danger-subtle: #fef2f2;
+  --destructive: var(--danger);
+
+  /* Structure */
+  --border: #e5e4df;
+  --input: #d8d7d2;
+  --ring: #e9775d;
+  --ec-radius-sm: 0.375rem;
+  --ec-radius-md: 0.625rem;
+  --ec-radius-lg: 0.875rem;
+  --ec-shadow-subtle: 0 1px 2px rgb(24 24 23 / 0.06);
+  --ec-shadow-raised: 0 12px 32px rgb(24 24 23 / 0.12);
+
+  /* Motion */
+  --duration-fast: 120ms;
+  --duration-normal: 180ms;
+  --duration-slow: 220ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Layout */
+  --content-max: 80rem;
+  --page-gutter: clamp(1rem, 3vw, 2rem);
+  --section-space: clamp(3.5rem, 7vw, 5rem);
+}

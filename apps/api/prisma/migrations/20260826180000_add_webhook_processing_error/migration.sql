@@ -1,0 +1,2 @@
+-- Duplicate column addition removed to prevent failure.
+-- Column processing_error was already added as TEXT in 20260824150000.

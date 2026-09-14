@@ -1,0 +1,15 @@
+{
+  "mode": "apply",
+  "source": "giftpop.vn",
+  "campaigns": {
+    "inserted": 5,
+    "updated": 0,
+    "unchanged": 0,
+    "rejected": 0
+  },
+  "brands": 4,
+  "categories": 12,
+  "branches": 10,
+  "orphanBranchesRemoved": 0,
+  "completedAt": "2026-09-11T04:55:15.623Z"
+}

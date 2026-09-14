@@ -1,0 +1,13 @@
+code,name_vi,parent_code,external_source,external_id,display_order,is_active
+FOOD_DRINK,Ẩm thực & Đồ uống,,,,10,true
+SHOPPING_RETAIL,Mua sắm & Bán lẻ,,,,20,true
+BEAUTY_HEALTH,Làm đẹp & Sức khỏe,,,,30,true
+DIGITAL_TELECOM,Kỹ thuật số & Viễn thông,,,,40,true
+ENTERTAINMENT,Giải trí,,,,50,true
+LIFESTYLE_SERVICES,Phong cách sống & Dịch vụ,,,,60,true
+TRANSPORT,Di chuyển,,,,70,true
+OTHER,Khác,,,,80,true
+GIFTPOP_VN_A104,Tiệc buffet,FOOD_DRINK,giftpop.vn,A104,104,true
+GIFTPOP_VN_A116,Vui chơi & Giải trí,ENTERTAINMENT,giftpop.vn,A116,116,true
+GIFTPOP_VN_A102,Nhà hàng,FOOD_DRINK,giftpop.vn,A102,102,true
+GIFTPOP_VN_A101,Cà phê - Trà,FOOD_DRINK,giftpop.vn,A101,101,true

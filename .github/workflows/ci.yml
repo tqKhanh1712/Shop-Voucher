@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/voucher_system?schema=public
+      DIRECT_URL: postgresql://postgres:postgres@localhost:5432/voucher_system?schema=public
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate Prisma schema
+        working-directory: apps/api
+        run: npx prisma validate --config prisma.config.ts
+
+      - name: Generate Prisma client
+        working-directory: apps/api
+        run: npx prisma generate --config prisma.config.ts
+
+      - name: Type-check API, tests, and seed
+        working-directory: apps/api
+        run: npx tsc --noEmit -p tsconfig.json
+
+      - name: Build API
+        run: npm run build:api
+
+      - name: Build Web
+        run: npm run build:web
+
+      - name: Test API
+        run: npm test --workspace apps/api -- --runInBand
+
+      - name: Test Web
+        run: npm test --workspace apps/web
