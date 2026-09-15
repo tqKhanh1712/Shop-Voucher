@@ -38,7 +38,7 @@ async function main() {
     console.log(`Đang xử lý chunk ${Math.floor(i / CHUNK_SIZE) + 1} (${chunk.length} items)...`);
     
     const texts = chunk.map(c => {
-      const categoryNames = c.campaignCategories.map(cc => cc.category.nameVi).join(', ');
+      const categoryNames = (Array.isArray(c.campaignCategories) ? c.campaignCategories : c.campaignCategories != null ? [c.campaignCategories] : []).map((cc: { category: { nameVi: string } }) => cc.category.nameVi).join(', ');
       // Lặp lại category 3 lần để AI "ghi nhớ" chủ đề rõ hơn.
       // Không dùng description (điều khoản dài) để tránh loãng vector.
       const categoryBoost = [categoryNames, categoryNames, categoryNames].join(' ');

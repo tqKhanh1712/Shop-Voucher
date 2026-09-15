@@ -77,24 +77,29 @@ export class VouchersService {
     private embeddingService: EmbeddingService,
   ) {}
 
-  private mapCatalogPresentation<
-    T extends {
-      campaignBrands?: Array<{ isPrimary: boolean; brand: unknown }>;
-      campaignCategories?: Array<{ isPrimary: boolean; category: unknown }>;
-    },
-  >(campaign: T) {
-    const { campaignBrands = [], campaignCategories = [], ...base } = campaign;
+  /**
+   * Chuan hoa du lieu campaign de hien thi tren catalog.
+   * Prisma v7 tra ve relations la single object (| null) thay vi array[],
+   * nen can normalize ve array truoc khi xu ly.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private mapCatalogPresentation(campaign: Record<string, any>) {
+    const rawBrands = campaign['campaignBrands'];
+    const rawCategories = campaign['campaignCategories'];
+    const campaignBrands: Array<{ isPrimary: boolean; brand: unknown }> = Array.isArray(rawBrands)
+      ? rawBrands : rawBrands != null ? [rawBrands] : [];
+    const campaignCategories: Array<{ isPrimary: boolean; category: unknown }> = Array.isArray(rawCategories)
+      ? rawCategories : rawCategories != null ? [rawCategories] : [];
+    const { campaignBrands: _b, campaignCategories: _c, ...base } = campaign;
     return {
       ...base,
       primaryBrand:
         campaignBrands.find((relation) => relation.isPrimary)?.brand ??
-        campaignBrands[0]?.brand ??
-        null,
+        campaignBrands[0]?.brand ?? null,
       brands: campaignBrands.map((relation) => relation.brand),
       primaryCategory:
         campaignCategories.find((relation) => relation.isPrimary)?.category ??
-        campaignCategories[0]?.category ??
-        null,
+        campaignCategories[0]?.category ?? null,
       categories: campaignCategories.map((relation) => relation.category),
     };
   }
@@ -612,11 +617,9 @@ export class VouchersService {
         campaignBranches: { include: { branch: true } },
         campaignCategories: {
           include: { category: { include: { parent: true } } },
-          orderBy: { isPrimary: 'desc' },
         },
         campaignBrands: {
           include: { brand: true },
-          orderBy: { isPrimary: 'desc' },
         },
       },
     });
@@ -824,7 +827,6 @@ export class VouchersService {
         },
         campaignBrands: {
           include: { brand: true },
-          orderBy: { isPrimary: 'desc' },
         },
         campaignCategories: {
           include: {
@@ -832,7 +834,6 @@ export class VouchersService {
               include: { parent: true },
             },
           },
-          orderBy: { isPrimary: 'desc' },
         },
       },
     });

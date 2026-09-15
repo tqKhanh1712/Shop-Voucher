@@ -1,4 +1,4 @@
-import {
+﻿import {
   ConflictException,
   Injectable,
   NotFoundException,
@@ -73,7 +73,7 @@ export class PaymentsService {
       }
 
       // Bước 4: Tính số lượt thử thanh toán (attemptNo)
-      const attemptNo = order.paymentTransactions.length + 1;
+      const attemptNo = (order.paymentTransactions ? 1 : 0) + 1;
       const idempotencyKey = `IDEM-${order.orderId}-${attemptNo}-${Date.now()}`;
 
       // Close every previous open attempt before creating the next one. The

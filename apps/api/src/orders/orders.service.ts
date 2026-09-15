@@ -1,4 +1,4 @@
-import {
+﻿import {
   Injectable,
   NotFoundException,
   BadRequestException,
@@ -332,7 +332,7 @@ export class OrdersService {
         }
       }
 
-      const payment = order.paymentTransactions[0];
+      const payment = order.paymentTransactions;
       if (!payment) {
         throw new BadRequestException(
           'Không tìm thấy giao dịch thanh toán thành công liên kết.',
@@ -528,7 +528,7 @@ export class OrdersService {
         );
       }
 
-      const payment = order.paymentTransactions[0];
+      const payment = order.paymentTransactions;
       if (!payment) {
         throw new BadRequestException(
           'Không tìm thấy giao dịch thanh toán thành công liên kết.',
