@@ -263,7 +263,7 @@ describe('VouchersService public province filters', () => {
     };
     return {
       prisma,
-      service: new VouchersService(prisma as any, {} as any, {} as any),
+      service: new VouchersService(prisma as any, {} as any, { generateEmbedding: jest.fn().mockResolvedValue(null) } as any),
     };
   }
 

@@ -1,4 +1,4 @@
-import './config/load-env';
+﻿import './config/load-env';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
@@ -20,7 +20,7 @@ async function bootstrap() {
   app.use(cookieParser());
 
   app.enableCors({
-    origin: process.env.FRONTEND_URL ?? 'http://localhost:3000',
+    origin: [process.env.FRONTEND_URL, 'http://localhost:3000'].filter(Boolean) as string[],
     credentials: true,
   });
 
