@@ -25,7 +25,7 @@ function getCookieOptions(): CookieOptions {
     httpOnly: true,
     secure: isProduction() || process.env.AUTH_COOKIE_SECURE === 'true',
     sameSite: getSameSite(),
-    path: '/auth',
+    path: '/',
   };
 }
 
