@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import { apiRequest } from "../lib/api";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
 import {
   Ticket,
   Search,
@@ -71,6 +72,7 @@ export default function Header({
   suggestions: externalSuggestions,
   searchLoading = false,
 }: HeaderProps) {
+  const t = useTranslations("header");
   const { user, logout } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
@@ -268,7 +270,7 @@ export default function Header({
                 value={keyword}
                 onChange={(e) => handleKeywordChange(e.target.value)}
                 onFocus={() => setShowSuggestions(true)}
-                placeholder="Tìm voucher ẩm thực, làm đẹp, giải trí..."
+                placeholder={t("searchPlaceholder")}
                 className="w-full pl-4 pr-20 py-2.5 bg-slate-100 dark:bg-slate-800 border-2 border-transparent focus:bg-white dark:focus:bg-slate-900 focus:border-primary/30 rounded-xl text-sm transition-all outline-none text-foreground placeholder:text-slate-400"
               />
               {keyword && (
@@ -358,7 +360,7 @@ export default function Header({
                 setShowMobileMenu(false);
               }}
               aria-label={
-                showMobileSearch ? "Đóng ô tìm kiếm" : "Mở ô tìm kiếm"
+                showMobileSearch ? "Close" : "Open"
               }
               aria-expanded={showMobileSearch}
               aria-controls="mobile-search-panel"
@@ -427,7 +429,7 @@ export default function Header({
                       <Link
                         href="/customer/orders"
                         className="p-2 text-slate-600 hover:text-primary transition-colors"
-                        title="Đơn hàng"
+                        title={t("orders")}
                       >
                         <FileText className="h-6 w-6" />
                       </Link>
@@ -436,7 +438,7 @@ export default function Header({
                       <Link
                         href="/customer/vouchers"
                         className="p-2 text-slate-600 hover:text-primary transition-colors"
-                        title="Ví Voucher"
+                        title={t("voucherWallet")}
                       >
                         <Ticket className="h-6 w-6" />
                       </Link>
@@ -445,7 +447,7 @@ export default function Header({
                       <Link
                         href="/customer/complaints"
                         className="p-2 text-slate-600 hover:text-primary transition-colors"
-                        title="Hỗ trợ & Khiếu nại"
+                        title={t("support")}
                       >
                         <MessageSquareWarning className="h-6 w-6" />
                       </Link>
@@ -464,7 +466,7 @@ export default function Header({
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">
-                      Tài khoản
+                      {t("account")}
                     </span>
                     <span className="text-sm font-bold text-slate-800 dark:text-slate-100 line-clamp-1 max-w-[100px]">
                       {user.fullName || "User"}
@@ -478,14 +480,14 @@ export default function Header({
                         href="/profile"
                         className="flex items-center gap-2 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary rounded-lg transition-colors"
                       >
-                        <UserIcon className="h-4 w-4" /> Thông tin hồ sơ
+                        <UserIcon className="h-4 w-4" /> {t("profileInfo")}
                       </Link>
                       <div className="h-px bg-slate-100 dark:bg-slate-800 my-1"></div>
                       <button
                         onClick={logout}
                         className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-lg transition-colors"
                       >
-                        <LogOut className="h-4 w-4" /> Đăng xuất
+                        <LogOut className="h-4 w-4" /> {t("logout")}
                       </button>
                     </div>
                   </div>
@@ -497,13 +499,13 @@ export default function Header({
                   href="/login"
                   className="px-4 py-2 text-sm font-bold text-primary bg-primary/10 hover:bg-primary/20 rounded-xl transition-colors"
                 >
-                  Đăng nhập
+                  {t("login")}
                 </Link>
                 <Link
                   href="/register"
                   className="px-4 py-2 text-sm font-bold text-white bg-primary hover:bg-primary-hover rounded-xl shadow-md shadow-primary/20 transition-all hover:-translate-y-0.5"
                 >
-                  Đăng ký
+                  {t("register")}
                 </Link>
               </div>
             )}
@@ -512,7 +514,7 @@ export default function Header({
 
         <div className="hidden border-t border-slate-100 dark:border-slate-800 md:block">
           <nav
-            aria-label="Điều hướng giới thiệu"
+            aria-label="Nav"
             className="mx-auto flex min-h-10 w-full max-w-7xl items-center gap-6 px-4 text-xs font-bold text-slate-600 sm:px-6 lg:px-8"
           >
             <Link
@@ -520,21 +522,21 @@ export default function Header({
               className="inline-flex items-center gap-1.5 transition hover:text-primary"
             >
               <Home className="h-3.5 w-3.5" aria-hidden="true" />
-              Kho voucher
+              {t("voucherStore")}
             </Link>
             <Link
               href="/for-customers"
               className="inline-flex items-center gap-1.5 transition hover:text-primary"
             >
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-              Dành cho khách hàng
+              {t("forCustomers")}
             </Link>
             <Link
               href="/for-partners"
               className="inline-flex items-center gap-1.5 transition hover:text-emerald-700"
             >
               <Building2 className="h-3.5 w-3.5" aria-hidden="true" />
-              Dành cho đối tác
+              {t("forPartners")}
             </Link>
           </nav>
         </div>
@@ -608,25 +610,25 @@ export default function Header({
             </span>
             <div>
               <SheetTitle>VoucherNow</SheetTitle>
-              <SheetDescription>Điều hướng và tài khoản</SheetDescription>
+              <SheetDescription>{t("navAndAccount")}</SheetDescription>
             </div>
           </div>
         </SheetHeader>
 
         <nav
-          aria-label="Điều hướng trên điện thoại"
+          aria-label="Nav"
           className="flex-1 space-y-1 overflow-y-auto px-4 py-4"
         >
           {[
-            { href: "/", label: "Kho voucher", icon: Home },
+            { href: "/", label: t("voucherStore"), icon: Home },
             {
               href: "/for-customers",
-              label: "Dành cho khách hàng",
+              label: t("forCustomers"),
               icon: Sparkles,
             },
             {
               href: "/for-partners",
-              label: "Dành cho đối tác",
+              label: t("forPartners"),
               icon: Building2,
             },
           ].map(({ href, label, icon: Icon }) => (
@@ -656,7 +658,7 @@ export default function Header({
                     className="h-5 w-5 text-danger"
                     aria-hidden="true"
                   />
-                  Trang quản trị Admin
+                  {t("adminArea")}
                 </Link>
               )}
               {(user.role === "PARTNER" || user.role === "PARTNER_STAFF") && (
@@ -673,7 +675,7 @@ export default function Header({
                     className="h-5 w-5 text-brand"
                     aria-hidden="true"
                   />
-                  Khu vực đối tác
+                  {t("partnerArea")}
                 </Link>
               )}
               {user.role === "CUSTOMER" && (
@@ -688,7 +690,7 @@ export default function Header({
                         className="h-5 w-5 text-brand"
                         aria-hidden="true"
                       />
-                      Giỏ hàng {cartItemCount > 0 ? `(${cartItemCount})` : ""}
+                      {t("cart")} {cartItemCount > 0 ? `(${cartItemCount})` : ""}
                     </Link>
                   )}
                   {pathname !== "/customer/orders" && (
@@ -701,7 +703,7 @@ export default function Header({
                         className="h-5 w-5 text-brand"
                         aria-hidden="true"
                       />
-                      Đơn hàng
+                      {t("orders")}
                     </Link>
                   )}
                   {pathname !== "/customer/vouchers" && (
@@ -714,7 +716,7 @@ export default function Header({
                         className="h-5 w-5 text-brand"
                         aria-hidden="true"
                       />
-                      Ví voucher
+                      {t("voucherWallet")}
                     </Link>
                   )}
                   {pathname !== "/customer/complaints" && (
@@ -727,7 +729,7 @@ export default function Header({
                         className="h-5 w-5 text-brand"
                         aria-hidden="true"
                       />
-                      Khiếu nại & Hỗ trợ
+                      {t("support")}
                     </Link>
                   )}
                 </>
@@ -741,7 +743,7 @@ export default function Header({
                   className="h-5 w-5 text-muted-foreground"
                   aria-hidden="true"
                 />
-                Hồ sơ tài khoản
+                {t("profileInfo")}
               </Link>
               <button
                 type="button"
@@ -752,7 +754,7 @@ export default function Header({
                 className="flex min-h-11 w-full items-center gap-3 rounded-ui-md px-3 py-2.5 text-sm font-bold text-danger transition hover:bg-danger-subtle"
               >
                 <LogOut className="h-5 w-5" aria-hidden="true" />
-                Đăng xuất
+                {t("logout")}
               </button>
             </div>
           )}
@@ -764,14 +766,14 @@ export default function Header({
                 onClick={closeMobileNavigation}
                 className="inline-flex min-h-11 items-center justify-center rounded-ui-md bg-brand-subtle px-4 py-2.5 text-sm font-bold text-brand"
               >
-                Đăng nhập
+                {t("login")}
               </Link>
               <Link
                 href="/register"
                 onClick={closeMobileNavigation}
                 className="inline-flex min-h-11 items-center justify-center rounded-ui-md bg-brand px-4 py-2.5 text-sm font-bold text-white"
               >
-                Đăng ký
+                {t("register")}
               </Link>
             </div>
           )}

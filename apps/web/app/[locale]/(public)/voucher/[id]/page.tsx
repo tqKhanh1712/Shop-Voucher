@@ -5,6 +5,8 @@ import { useParams, useRouter } from 'next/navigation';
 import { apiRequest } from '@/lib/api';
 import { getErrorMessage } from '@/lib/errors';
 import { useAuth } from '@/context/AuthContext';
+import { useAuth } from '@/context/AuthContext';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/Header';
@@ -94,6 +96,7 @@ interface ReviewsResponse {
 }
 
 export default function VoucherDetailPage() {
+  const t = useTranslations('voucherDetail');
   const params = useParams();
   const router = useRouter();
   const { user } = useAuth();
@@ -246,10 +249,10 @@ export default function VoucherDetailPage() {
     return (
       <div className="max-w-2xl mx-auto py-12 px-4 text-center space-y-4">
         <AlertCircle className="h-12 w-12 text-primary mx-auto" />
-        <h3 className="text-lg font-bold text-foreground">Không tìm thấy voucher</h3>
-        <p className="text-sm text-muted">{errorMsg || 'Chiến dịch voucher này không tồn tại hoặc đã bị gỡ bỏ.'}</p>
+        <h3 className="text-lg font-bold text-foreground">{t('notFound')}</h3>
+        <p className="text-sm text-muted">{errorMsg || t('notFoundDesc')}</p>
         <Link href="/" className="inline-flex items-center text-xs font-bold text-primary hover:underline">
-          <ArrowLeft className="mr-1 h-4 w-4" /> Quay lại trang chủ
+          <ArrowLeft className="mr-1 h-4 w-4" /> {t('backHome')}
         </Link>
       </div>
     );
@@ -327,16 +330,16 @@ export default function VoucherDetailPage() {
 
               {/* Nội dung gốc từ catalog */}
               <div className="border-t border-border pt-4 space-y-3">
-                <h3 className="text-sm font-bold text-foreground">Thông tin sản phẩm</h3>
+                <h3 className="text-sm font-bold text-foreground">{t('productInfo')}</h3>
                 <div className="text-xs text-muted leading-relaxed whitespace-pre-line bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 p-4 rounded-xl">
-                  {campaign.description || 'Chưa có thông tin chi tiết cho sản phẩm này.'}
+                  {campaign.description || t('noTerms')}
                 </div>
               </div>
 
               <div className="border-t border-border pt-4 space-y-3">
-                <h3 className="text-sm font-bold text-foreground">Chú ý & Điều kiện áp dụng</h3>
+                <h3 className="text-sm font-bold text-foreground">{t('terms')}</h3>
                 <div className="text-xs text-muted leading-relaxed whitespace-pre-line bg-amber-50/50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-900/50 p-4 rounded-xl">
-                  {campaign.termsAndConditions || 'Chưa có điều kiện áp dụng cho sản phẩm này.'}
+                  {campaign.termsAndConditions || t('noTerms')}
                 </div>
                 {campaign.sourceUrl && (
                   <a
@@ -345,20 +348,20 @@ export default function VoucherDetailPage() {
                     rel="noopener noreferrer"
                     className="inline-flex text-[11px] font-semibold text-primary hover:underline"
                   >
-                    Xem thông tin cập nhật tại nguồn Giftpop
+                    {t('viewAtSource')}
                   </a>
                 )}
               </div>
 
               {/* Quy chế quét */}
               <div className="border-t border-border pt-4 text-xs space-y-2">
-                <h3 className="text-sm font-bold text-foreground">Hình thức quy đổi</h3>
+                <h3 className="text-sm font-bold text-foreground">{t('redemptionFormat')}</h3>
                 <div className="flex items-center gap-2 text-muted">
                   <Ticket className="h-4 w-4 text-primary" />
                   <span>
-                    Chế độ quét mã: {campaign.isMultiUse 
-                      ? `Sử dụng nhiều lần (Tối đa ${campaign.maxUsesPerCode || 'không giới hạn'} lần quét)` 
-                      : 'Quét 1 lần duy nhất để đổi voucher'
+                    {t('scanMode')}: {campaign.isMultiUse 
+                      ? `${t('multiUse')} (Max ${campaign.maxUsesPerCode || '∞'})` 
+                      : t('singleUse')
                     }
                   </span>
                 </div>
@@ -366,14 +369,14 @@ export default function VoucherDetailPage() {
 
               {/* Chi nhánh áp dụng */}
               <div className="border-t border-border pt-4 space-y-3 text-xs">
-                <h3 className="text-sm font-bold text-foreground">Chi nhánh áp dụng ({campaign.campaignBranches.length})</h3>
+                <h3 className="text-sm font-bold text-foreground">{t('applicableBranches')} ({campaign.campaignBranches.length})</h3>
                 <div className="grid grid-cols-1 gap-3">
                   {campaign.campaignBranches.map((cb) => (
                     <div key={cb.branch.branchId} className="flex gap-2 p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 rounded-xl">
                       <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                       <div>
                         <div className="font-bold text-foreground">{cb.branch.name}</div>
-                        <p className="text-[11px] text-muted mt-0.5">{cb.branch.address || 'Chưa cập nhật địa chỉ'}</p>
+                        <p className="text-[11px] text-muted mt-0.5">{cb.branch.address || t('noAddress')}</p>
                       </div>
                     </div>
                   ))}
@@ -384,7 +387,7 @@ export default function VoucherDetailPage() {
                 <div className="flex items-center justify-between gap-4">
                   <h3 className="text-sm font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
                     <MessageSquare className="h-4 w-4 text-primary" />
-                    Đánh giá từ khách hàng ({reviewStats.totalCount})
+                    {t('customerReviews')} ({reviewStats.totalCount})
                   </h3>
                   {reviewStats.totalCount > 0 && (
                     <div className="flex items-center gap-1.5">
@@ -400,12 +403,12 @@ export default function VoucherDetailPage() {
                 {/* FORM GỬI ĐÁNH GIÁ (Nếu là Customer đăng nhập) */}
                 {user && user.role === 'CUSTOMER' && (
                   <div className="bg-secondary/40 border border-border rounded-2xl p-5 space-y-4">
-                    <h4 className="text-xs font-bold text-foreground uppercase tracking-wide">Viết đánh giá của bạn</h4>
+                    <h4 className="text-xs font-bold text-foreground uppercase tracking-wide">{t('writeReview')}</h4>
                     
                     <form onSubmit={handleReviewSubmit} className="space-y-3">
                       {/* Chọn Số Sao */}
                       <div className="flex items-center gap-2">
-                        <span className="text-xs text-muted">Đánh giá sao:</span>
+                        <span className="text-xs text-muted">{t('reviewRating')}:</span>
                         <div className="flex items-center gap-1">
                           {[1, 2, 3, 4, 5].map((star) => (
                             <button
@@ -425,7 +428,7 @@ export default function VoucherDetailPage() {
                         <textarea
                           value={userComment}
                           onChange={(e) => setUserComment(e.target.value)}
-                          placeholder="Nhập cảm nghĩ, bình luận của bạn về chất lượng dịch vụ và voucher..."
+                          placeholder={t('reviewPlaceholder')}
                           rows={3}
                           className="block w-full rounded-lg border border-border bg-card py-2 px-3 text-xs text-foreground placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all resize-none"
                         />
@@ -441,7 +444,7 @@ export default function VoucherDetailPage() {
                       {reviewSuccess && (
                         <div className="bg-green-500/10 border border-green-500/20 text-green-800 text-[10px] p-2.5 rounded-lg flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 text-green-600 shrink-0" />
-                          <span>Đã gửi đánh giá thành công! Cảm ơn ý kiến đóng góp của bạn.</span>
+                          <span>{t('reviewSuccess')}</span>
                         </div>
                       )}
 
@@ -450,7 +453,7 @@ export default function VoucherDetailPage() {
                         disabled={submittingReview}
                         className="inline-flex items-center justify-center rounded-xl bg-primary hover:bg-primary-hover text-white px-4 py-2 text-xs font-bold transition-colors disabled:bg-slate-300"
                       >
-                        {submittingReview ? 'Đang gửi...' : 'Gửi đánh giá'}
+                        {submittingReview ? t('submitting') : t('submitReview')}
                       </button>
                     </form>
                   </div>
@@ -458,7 +461,7 @@ export default function VoucherDetailPage() {
 
                 {/* DANH SÁCH BÌNH LUẬN */}
                 {reviews.length === 0 ? (
-                  <p className="text-xs text-muted text-center py-4">Chưa có đánh giá nào cho chương trình voucher này.</p>
+                  <p className="text-xs text-muted text-center py-4">{t('noReviews')}</p>
                 ) : (
                   <div className="space-y-4">
                     {reviews.map((rev) => {
@@ -506,7 +509,7 @@ export default function VoucherDetailPage() {
               
               {/* Giá cả */}
               <div className="space-y-1">
-                <span className="text-[10px] text-muted uppercase font-bold tracking-wider">Giá khuyến mãi</span>
+                <span className="text-[10px] text-muted uppercase font-bold tracking-wider">{t('salePrice')}</span>
                 <div className="flex items-baseline gap-2">
                   <span className="text-2xl font-black text-primary">
                     {Number(campaign.salePrice).toLocaleString('vi-VN')} đ
@@ -517,7 +520,7 @@ export default function VoucherDetailPage() {
                 </div>
                 {discountPct > 0 && (
                   <span className="inline-block text-[10px] font-bold text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-900/30 rounded px-1.5 py-0.5 ring-1 ring-red-600/10 dark:ring-red-900/50 mt-1">
-                    Tiết kiệm {discountPct}% ({Math.round(Number(campaign.originalPrice) - Number(campaign.salePrice)).toLocaleString('vi-VN')} đ)
+                    {t('save')} {discountPct}% ({Math.round(Number(campaign.originalPrice) - Number(campaign.salePrice)).toLocaleString('vi-VN')} đ)
                   </span>
                 )}
               </div>
@@ -525,13 +528,13 @@ export default function VoucherDetailPage() {
               {/* Tình trạng kho hàng */}
               <div className="border-t border-border/60 pt-4 text-xs space-y-2 text-muted">
                 <div className="flex items-center justify-between">
-                  <span>Tình trạng:</span>
+                  <span>{t('status')}:</span>
                   <span className={`font-bold ${isSoldOut ? 'text-red-600' : 'text-green-600'}`}>
-                    {isSoldOut ? 'Hết hàng' : 'Đang mở bán'}
+                    {isSoldOut ? t('soldOut') : t('onSale')}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Còn lại trong kho:</span>
+                  <span>{t('inStock')}:</span>
                   <span className="font-bold text-foreground">{remaining} / {campaign.capacity} voucher</span>
                 </div>
               </div>
@@ -540,14 +543,14 @@ export default function VoucherDetailPage() {
               <div className="border-t border-border/60 pt-4 text-xs space-y-2 text-muted">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4 text-primary shrink-0" />
-                  <span>Bán đến: {new Date(campaign.saleEndTime).toLocaleDateString('vi-VN')}</span>
+                  <span>{t('saleUntil')}: {new Date(campaign.saleEndTime).toLocaleDateString('vi-VN')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="h-4 w-4 text-primary shrink-0" />
                   <span>
                     {campaign.usageValidityDays
-                      ? `Hạn dùng: ${campaign.usageValidityDays} ngày kể từ ngày mua`
-                      : `Sử dụng đến: ${new Date(campaign.usageEndTime).toLocaleDateString('vi-VN')}`}
+                      ? t('usageValidFor', { days: campaign.usageValidityDays })
+                      : `${t('useUntil')}: ${new Date(campaign.usageEndTime).toLocaleDateString('vi-VN')}`}
                   </span>
                 </div>
               </div>
@@ -556,7 +559,7 @@ export default function VoucherDetailPage() {
               {!isSoldOut && (
                 <div className="border-t border-border/60 pt-4 space-y-2">
                   <label className="block text-xs font-semibold text-foreground">
-                    Chọn số lượng mua {cartQuantity > 0 && <span className="text-primary font-normal">(Đã có {cartQuantity} trong giỏ)</span>}
+                    {t('selectQuantity')} {cartQuantity > 0 && <span className="text-primary font-normal">({t('inCart', { qty: cartQuantity })})</span>}
                   </label>
                   <div className="flex items-center gap-2">
                     <button
@@ -578,10 +581,10 @@ export default function VoucherDetailPage() {
                     >
                       +
                     </button>
-                    <span className="text-[10px] text-muted ml-1">(Tối đa {maxAllowed})</span>
+                    <span className="text-[10px] text-muted ml-1">({t('maxAllowed')} {maxAllowed})</span>
                   </div>
                   {maxAllowed === 0 && (
-                    <p className="text-xs text-red-500 mt-1">Bạn đã đạt giới hạn tối đa 10 voucher trong giỏ hàng.</p>
+                    <p className="text-xs text-red-500 mt-1">{t('maxLimitReached')}</p>
                   )}
                 </div>
               )}
@@ -590,7 +593,7 @@ export default function VoucherDetailPage() {
               {!user && (
                 <div className="rounded-lg bg-yellow-50 dark:bg-yellow-900/20 p-3 border border-yellow-100 dark:border-yellow-900/50 flex items-start gap-2 text-[10px] text-yellow-800 dark:text-yellow-400">
                   <Info className="h-4 w-4 text-yellow-600 dark:text-yellow-500 shrink-0 mt-0.5" />
-                  <span>Bạn cần đăng nhập tài khoản Khách hàng để thực hiện giao dịch mua voucher.</span>
+                  <span>{t('loginRequired')}</span>
                 </div>
               )}
 
@@ -603,7 +606,7 @@ export default function VoucherDetailPage() {
                   className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary bg-primary/5 hover:bg-primary/10 text-primary py-3 text-sm font-bold disabled:border-slate-300 disabled:text-slate-500 transition-colors"
                 >
                   <ShoppingCart className="h-4 w-4 shrink-0" />
-                  {isSoldOut ? 'Hết hàng' : 'Thêm vào giỏ'}
+                  {isSoldOut ? t('soldOut') : t('addToCart')}
                 </button>
                 <button
                   type="button"
@@ -612,7 +615,7 @@ export default function VoucherDetailPage() {
                   className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-hover text-white py-3 text-sm font-bold disabled:bg-slate-300 disabled:text-slate-500 transition-colors shadow shadow-primary/10"
                 >
                   <Ticket className="h-4 w-4 shrink-0" />
-                  {isSoldOut ? 'Hết hàng' : 'Mua ngay'}
+                  {isSoldOut ? t('soldOut') : t('buyNow')}
                 </button>
               </div>
 

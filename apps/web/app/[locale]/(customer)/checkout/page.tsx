@@ -5,6 +5,7 @@ import { apiRequest } from '@/lib/api';
 import { getErrorMessage } from '@/lib/errors';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import {
@@ -69,6 +70,7 @@ export default function CheckoutPage() {
 }
 
 function CheckoutPageContent() {
+  const t = useTranslations('checkout');
   const { user, loading: authLoading } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -268,33 +270,33 @@ function CheckoutPageContent() {
 
             <div className="space-y-1">
               <h2 className="text-xl font-extrabold text-foreground">
-                {orderIdFromQuery ? 'Tiếp tục thanh toán đơn hàng' : 'Đơn hàng đã được khởi tạo!'}
+                {orderIdFromQuery ? t('continuePayment') : t('successTitle')}
               </h2>
-              <p className="text-xs text-muted">Mã đơn hàng: <span className="font-bold text-foreground">{createdOrder.orderCode}</span></p>
+              <p className="text-xs text-muted">{t('orderCode')}: <span className="font-bold text-foreground">{createdOrder.orderCode}</span></p>
             </div>
 
             {/* Hộp đếm ngược giữ chỗ */}
             <div className="bg-secondary/40 dark:bg-secondary/20 border border-primary/20 rounded-xl p-4 flex flex-col items-center justify-center gap-1.5">
               <div className="flex items-center gap-1.5 text-xs text-primary font-bold">
                 <Clock className="h-4 w-4" />
-                <span>Thời gian giữ chỗ thanh toán</span>
+                <span>{t('reservationTime')}</span>
               </div>
               <span className="text-2xl font-black text-primary font-mono tracking-wider">
                 {formatTime(timeLeft)}
               </span>
               <p className="text-[10px] text-muted text-center max-w-xs mt-1 leading-relaxed">
-                Đơn hàng sẽ tự động hủy nếu quá hạn thanh toán.
+                {t('autoCancel')}
               </p>
             </div>
 
             {/* Chi tiết đơn */}
             <div className="text-xs text-left border-y border-border/60 py-4 space-y-2.5">
               <div className="flex justify-between">
-                <span className="text-muted">Tổng số tiền:</span>
+                <span className="text-muted">{t('total')}:</span>
                 <span className="font-extrabold text-primary text-sm">{Number(createdOrder.totalAmount).toLocaleString('vi-VN')} đ</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted">Cổng thanh toán:</span>
+                <span className="text-muted">{t('paymentProvider')}:</span>
                 <span className="font-bold text-foreground">{createdOrder.selectedPaymentProvider}</span>
               </div>
             </div>
@@ -311,14 +313,14 @@ function CheckoutPageContent() {
                 disabled={redirecting || timeLeft === 0}
                 className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-hover text-white py-3 text-sm font-bold disabled:bg-slate-300 disabled:text-slate-500 transition-all shadow shadow-primary/10"
               >
-                {redirecting ? 'Đang chuyển hướng...' : `Thanh toán ngay (${createdOrder.selectedPaymentProvider})`}
+                {redirecting ? t('redirecting') : t('payNow', { provider: createdOrder.selectedPaymentProvider })}
               </button>
 
               <Link
                 href="/"
                 className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-border hover:bg-slate-50 dark:hover:bg-slate-800 text-foreground py-2.5 text-xs font-bold transition-colors"
               >
-                Quay lại Trang chủ
+                {t('backHome')}
               </Link>
             </div>
           </div>
@@ -336,7 +338,7 @@ function CheckoutPageContent() {
 
           <div className="flex items-center gap-2 pb-3 border-b border-border/60">
             <CreditCard className="h-6 w-6 text-primary" />
-            <h1 className="text-xl sm:text-2xl font-extrabold text-foreground">Thanh toán Đơn hàng</h1>
+            <h1 className="text-xl sm:text-2xl font-extrabold text-foreground">{t('title')}</h1>
           </div>
 
           {errorMsg && (
@@ -355,16 +357,16 @@ function CheckoutPageContent() {
               <div className="rounded-2xl border border-border bg-card p-6 shadow-sm space-y-4">
                 <h3 className="text-sm font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
                   <FileText className="h-4 w-4 text-primary" />
-                  Thông tin người mua hàng
+                  {t('buyerInfo')}
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                   <div>
-                    <span className="text-muted block">Họ và tên:</span>
+                    <span className="text-muted block">{t('fullName')}:</span>
                     <span className="font-bold text-foreground mt-0.5 block">{user?.fullName}</span>
                   </div>
                   <div>
-                    <span className="text-muted block">Thông tin liên hệ (Email/SĐT):</span>
+                    <span className="text-muted block">{t('contactInfo')}:</span>
                     <span className="font-bold text-foreground mt-0.5 block">{user?.email || user?.phone}</span>
                   </div>
                 </div>
@@ -384,7 +386,7 @@ function CheckoutPageContent() {
                     className="rounded border-border text-primary focus:ring-primary h-4 w-4 cursor-pointer"
                   />
                   <label htmlFor="isGift" className="text-xs font-semibold text-foreground cursor-pointer select-none">
-                    🎁 Gửi tặng voucher này cho người khác (làm quà tặng)
+                    🎁 {t('isGift')}
                   </label>
                 </div>
 
@@ -392,18 +394,18 @@ function CheckoutPageContent() {
                 {isGift && (
                   <div className="space-y-1.5 pt-1.5 animate-fadeIn">
                     <label className="block text-xs font-semibold text-foreground">
-                      Email người nhận quà <span className="text-red-500">*</span>
+                      {t('recipientEmail')} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
                       required
                       value={recipientEmail}
                       onChange={(e) => setRecipientEmail(e.target.value)}
-                      placeholder="Nhập email của người nhận quà..."
+                      placeholder="Email..."
                       className="block w-full rounded-lg border border-border bg-card py-2 px-3 text-foreground placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
                     />
                     <p className="text-[10px] text-muted">
-                      *Hệ thống sẽ tự động gửi email chứa các mã Voucher Code đến hòm thư này ngay khi bạn thanh toán thành công.
+                      {t('emailNote')}
                     </p>
                   </div>
                 )}
@@ -411,12 +413,12 @@ function CheckoutPageContent() {
                 {/* Note input */}
                 <div className="space-y-1.5 pt-2">
                   <label className="block text-xs font-semibold text-foreground">
-                    {isGift ? 'Lời chúc / Lời nhắn đi kèm (Tùy chọn)' : 'Ghi chú đơn hàng (Tùy chọn)'}
+                    {isGift ? t('giftNote') : t('orderNote')}
                   </label>
                   <textarea
                     value={recipientNote}
                     onChange={(e) => setRecipientNote(e.target.value)}
-                    placeholder={isGift ? "Chúc bạn một ngày vui vẻ!..." : "Ghi chú thêm cho đơn hàng..."}
+                    placeholder="..."
                     rows={3}
                     className="block w-full rounded-lg border border-border bg-card py-2 px-3 text-foreground placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
                   />
@@ -427,7 +429,7 @@ function CheckoutPageContent() {
               <div className="rounded-2xl border border-border bg-card p-6 shadow-sm space-y-4">
                 <h3 className="text-sm font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
                   <CreditCard className="h-4 w-4 text-primary" />
-                  Chọn Cổng thanh toán
+                  {t('paymentMethod')}
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -508,7 +510,7 @@ function CheckoutPageContent() {
             {/* CỘT PHẢI: TÓM TẮT ĐƠN HÀNG & NÚT TIẾN HÀNH (1 CỘT) */}
             <div className="lg:col-span-1">
               <div className="rounded-2xl border border-border bg-card p-6 shadow-sm space-y-6">
-                <h3 className="text-sm font-bold text-foreground uppercase tracking-wider">Tóm tắt đơn hàng</h3>
+                <h3 className="text-sm font-bold text-foreground uppercase tracking-wider">{t('orderSummary')}</h3>
 
                 {/* Danh sách rút gọn */}
                 <div className="space-y-3 max-h-48 overflow-y-auto pr-1">
@@ -516,7 +518,7 @@ function CheckoutPageContent() {
                     <div key={item.cartItemId} className="flex justify-between gap-4 text-xs border-b border-border/40 pb-2">
                       <div className="flex-1">
                         <div className="font-semibold text-foreground line-clamp-1">{item.campaign.title}</div>
-                        <span className="text-[10px] text-muted">Số lượng: {item.quantity}</span>
+                        <span className="text-[10px] text-muted">{t('quantity')}: {item.quantity}</span>
                       </div>
                       <span className="font-bold text-foreground shrink-0">
                         {(Number(item.campaign.salePrice) * item.quantity).toLocaleString('vi-VN')} đ
@@ -528,7 +530,7 @@ function CheckoutPageContent() {
                 {/* Tổng tiền */}
                 <div className="space-y-3 text-xs text-muted border-t border-border/60 pt-4">
                   <div className="flex items-center justify-between border-t border-dashed border-border/40 pt-3">
-                    <span className="text-sm font-bold text-foreground">Tổng tiền:</span>
+                    <span className="text-sm font-bold text-foreground">{t('total')}:</span>
                     <span className="text-base font-extrabold text-primary">
                       {totalAmount.toLocaleString('vi-VN')} đ
                     </span>
@@ -538,18 +540,18 @@ function CheckoutPageContent() {
                 <div className="space-y-3">
                   <div className="rounded-lg bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-100 dark:border-yellow-900/50 p-3 flex gap-2 text-[10px] text-yellow-800 dark:text-yellow-400">
                     <Info className="h-4 w-4 text-yellow-600 dark:text-yellow-500 shrink-0 mt-0.5" />
-                    <span>Voucher sẽ được giữ cho bạn trong 15 phút.</span>
+                    <span>{t('reservationNote')}</span>
                   </div>
 
                   <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 p-3 text-[10px] text-slate-600 dark:text-slate-300">
                     <h4 className="font-bold text-slate-700 dark:text-slate-200 mb-1 flex items-center gap-1.5">
                       <ShieldAlert className="h-3.5 w-3.5 text-primary" />
-                      Chính sách Hủy / Hoàn tiền
+                      {t('policyTitle')}
                     </h4>
                     <ul className="list-disc pl-4 space-y-1">
-                      <li>Bạn có thể hủy đơn hàng chưa thanh toán bất cứ lúc nào.</li>
-                      <li>Voucher đã thanh toán nhưng chưa sử dụng và chưa hết hạn có thể gửi yêu cầu hoàn tiền (Refund).</li>
-                      <li>Voucher đã sử dụng hoặc quá hạn sẽ không được hoàn tiền dưới bất kỳ hình thức nào.</li>
+                      <li>{t('policy1')}</li>
+                      <li>{t('policy2')}</li>
+                      <li>{t('policy3')}</li>
                     </ul>
                   </div>
                 </div>
@@ -559,7 +561,7 @@ function CheckoutPageContent() {
                   disabled={submitting || cartItems.length === 0}
                   className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-hover text-white py-3 text-sm font-bold disabled:bg-slate-300 disabled:text-slate-500 transition-colors shadow shadow-primary/10"
                 >
-                  {submitting ? 'Đang tạo đơn...' : 'Đặt mua & Thanh toán'}
+                  {submitting ? t('submitting') : t('submit')}
                 </button>
               </div>
             </div>

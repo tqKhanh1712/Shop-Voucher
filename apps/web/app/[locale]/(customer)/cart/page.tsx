@@ -5,6 +5,7 @@ import { apiRequest } from '@/lib/api';
 import { getErrorMessage } from '@/lib/errors';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { 
   ShoppingCart, 
@@ -44,6 +45,7 @@ interface CartItem {
 }
 
 export default function CartPage() {
+  const t = useTranslations('cart');
   const { user, loading: authLoading } = useAuth();
   const router = useRouter();
   
@@ -164,8 +166,8 @@ export default function CartPage() {
               <ShoppingCart className="h-7 w-7 text-primary" />
             </div>
             <div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-800 dark:text-slate-100">Giỏ hàng của bạn</h1>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Quản lý và thanh toán các voucher bạn đã chọn</p>
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-800 dark:text-slate-100">{t('title')}</h1>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{t('subtitle')}</p>
             </div>
           </div>
 
@@ -179,16 +181,16 @@ export default function CartPage() {
         {cartItems.length === 0 ? (
           <div className="text-center py-20 bg-card rounded-2xl border border-border shadow-sm">
             <ShoppingCart className="h-12 w-12 text-muted/40 mx-auto mb-3" />
-            <h3 className="text-sm font-bold text-foreground">Giỏ hàng trống</h3>
+            <h3 className="text-sm font-bold text-foreground">{t('emptyTitle')}</h3>
             <p className="text-xs text-muted mt-1 max-w-xs mx-auto leading-relaxed">
-              Bạn chưa thêm bất kỳ voucher khuyến mãi nào vào giỏ hàng. Hãy khám phá và mua sắm ngay!
+              {t('emptyDesc')}
             </p>
             <Link
               href="/"
               className="mt-5 inline-flex items-center gap-1.5 py-2.5 px-4 bg-primary hover:bg-primary-hover text-white text-xs font-bold rounded-lg shadow transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              Tiếp tục mua sắm
+              {t('continueShopping')}
             </Link>
           </div>
         ) : (
@@ -204,7 +206,7 @@ export default function CartPage() {
                   className="w-5 h-5 rounded border-border text-primary focus:ring-primary cursor-pointer"
                 />
                 <span className="text-sm font-bold text-foreground cursor-pointer select-none" onClick={toggleSelectAll}>
-                  Chọn tất cả ({cartItems.length})
+                  {t('selectAll')} ({cartItems.length})
                 </span>
               </div>
 
@@ -270,7 +272,7 @@ export default function CartPage() {
                       <button
                         onClick={() => handleDeleteItem(item.cartItemId)}
                         className="p-2 rounded-lg text-muted hover:text-primary hover:bg-red-500/10 transition-colors"
-                        title="Xóa vật phẩm"
+                        title={t('delete')}
                       >
                         <Trash2 className="h-4 w-4" />
                       </button>
@@ -284,24 +286,24 @@ export default function CartPage() {
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline pt-2"
               >
                 <ArrowLeft className="h-4 w-4" />
-                Tiếp tục mua thêm voucher khác
+                {t('continueOther')}
               </Link>
             </div>
 
             {/* HÓA ĐƠN TẠM TÍNH (1 CỘT) */}
             <div className="lg:col-span-1">
               <div className="rounded-2xl border border-border bg-card p-6 shadow-sm space-y-6">
-                <h3 className="text-sm font-bold text-foreground uppercase tracking-wider">Thông tin đơn hàng</h3>
+                <h3 className="text-sm font-bold text-foreground uppercase tracking-wider">{t('orderInfo')}</h3>
                 
                 <div className="space-y-3 text-xs text-muted border-t border-border/60 pt-4">
                   <div className="flex items-center justify-between">
-                    <span>Sản phẩm đã chọn:</span>
+                    <span>{t('selectedProducts')}:</span>
                     <span className="font-bold text-foreground">
                       {totalSelectedQuantity}
                     </span>
                   </div>
                   <div className="flex items-center justify-between border-t border-dashed border-border/40 pt-3">
-                    <span className="text-sm font-bold text-foreground">Tổng tiền thanh toán:</span>
+                    <span className="text-sm font-bold text-foreground">{t('totalPayment')}:</span>
                     <span className="text-base font-extrabold text-primary">
                       {totalAmount.toLocaleString('vi-VN')} đ
                     </span>
@@ -310,7 +312,7 @@ export default function CartPage() {
 
                 <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 p-3 flex gap-2 text-[10px] text-muted">
                   <Info className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                  <span>Giá bán trên đã bao gồm VAT. Voucher không thể quy đổi thành tiền mặt sau khi mua.</span>
+                  <span>{t('vatNote')}</span>
                 </div>
 
                 <button
@@ -322,7 +324,7 @@ export default function CartPage() {
                   disabled={selectedItemIds.length === 0}
                   className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-hover text-white py-3 text-sm font-bold transition-colors shadow shadow-primary/10 disabled:bg-slate-300 disabled:text-slate-500 disabled:shadow-none"
                 >
-                  Đặt mua hàng {selectedItemIds.length > 0 ? `(${selectedItemIds.length})` : ''}
+                  {t('checkout')} {selectedItemIds.length > 0 ? `(${selectedItemIds.length})` : ''}
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>

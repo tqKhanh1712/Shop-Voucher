@@ -4,7 +4,9 @@ import React, { useState, Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import * as z from 'zod';
 import { useAuth } from '@/context/AuthContext';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Mail, Lock, Ticket, ArrowRight, AlertCircle, Info, Eye, EyeOff, ArrowLeft } from 'lucide-react';
@@ -18,6 +20,8 @@ const loginSchema = z.object({
 type LoginSchemaType = z.infer<typeof loginSchema>;
 
 function LoginForm() {
+function LoginForm() {
+  const t = useTranslations('auth');
   const { login, loading } = useAuth();
   const searchParams = useSearchParams();
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -59,10 +63,10 @@ function LoginForm() {
             <Ticket className="h-6 w-6" />
           </div>
           <h2 className="mt-6 text-3xl font-bold tracking-tight text-foreground">
-            VoucherNow
+            {t('loginTitle')}
           </h2>
           <p className="mt-2 text-sm text-muted">
-            Trải nghiệm mua sắm và đổi voucher tiện lợi
+            {t('loginSubtitle')}
           </p>
         </div>
 
@@ -71,9 +75,9 @@ function LoginForm() {
           <div className="flex items-start gap-3 rounded-lg bg-secondary dark:bg-secondary/40 p-4 border border-primary/20 dark:border-primary/30 text-primary text-sm leading-relaxed">
             <Info className="h-5 w-5 shrink-0 text-primary mt-0.5" />
             <div>
-              <span className="font-semibold">Đăng ký đối tác thành công!</span>
+              <span className="font-semibold">{t('partnerSuccess')}</span>
               <p className="mt-1 text-xs text-muted">
-                Hồ sơ doanh nghiệp đang chờ Admin phê duyệt. Hệ thống sẽ kích hoạt tài khoản ngay sau khi phê duyệt hoàn tất.
+                {t('partnerSuccessDesc')}
               </p>
             </div>
           </div>
@@ -94,7 +98,7 @@ function LoginForm() {
             {/* EMAIL / SỐ ĐIỆN THOẠI */}
             <div>
               <label className="block text-xs font-semibold text-foreground mb-1.5">
-                Email hoặc Số điện thoại
+                {t('identifier')}
               </label>
               <div className="relative rounded-lg">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -118,13 +122,13 @@ function LoginForm() {
             <div>
               <div className="flex items-center justify-between mb-1.5">
                 <label className="block text-xs font-semibold text-foreground">
-                  Mật khẩu
+                  {t('password')}
                 </label>
                 <Link
                   href="/forgot-password"
                   className="text-xs font-semibold text-primary hover:text-primary-hover transition-colors"
                 >
-                  Quên mật khẩu?
+                  {t('forgotPassword')}
                 </Link>
               </div>
               <div className="relative rounded-lg">
@@ -160,7 +164,7 @@ function LoginForm() {
             disabled={loading}
             className="group relative flex w-full justify-center rounded-lg bg-primary py-3 px-4 text-sm font-semibold text-white hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50 transition-all duration-200 shadow-sm"
           >
-            {loading ? 'Đang xử lý...' : 'Đăng nhập'}
+            {loading ? t('loggingIn') : t('loginBtn')}
             {!loading && <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />}
           </button>
         </form>
@@ -168,17 +172,17 @@ function LoginForm() {
         {/* LINK CHUYỂN TRANG ĐĂNG KÝ VÀ TRỞ VỀ */}
         <div className="text-center text-sm text-muted pt-6 border-t border-border/60 flex flex-col items-center gap-4">
           <div>
-            Chưa có tài khoản?{' '}
+            {t('noAccount')}{' '}
             <Link
               href="/register"
               className="font-bold text-primary hover:text-primary-hover transition-colors"
             >
-              Đăng ký ngay
+              {t('registerNow')}
             </Link>
           </div>
           <Link href="/" className="inline-flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary font-medium transition-colors">
             <ArrowLeft className="h-4 w-4" />
-            Trở về trang chủ
+            {t('backHome')}
           </Link>
         </div>
 
