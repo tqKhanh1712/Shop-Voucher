@@ -18,6 +18,8 @@
     "html5-qrcode": "^2.3.8",
     "lucide-react": "^1.31.0",
     "next": "16.3.0",
+    "next-intl": "^4.14.5",
+    "next-themes": "^0.4.6",
     "qrcode.react": "^4.2.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
 import { apiRequest } from "../lib/api";
+import { ThemeToggle } from "./ThemeToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import {
   Ticket,
   Search,
@@ -384,6 +386,8 @@ export default function Header({
 
           {/* Actions & Profile - Right */}
           <div className="hidden md:flex items-center gap-4 shrink-0">
+            <ThemeToggle />
+            <LanguageSwitcher />
             {user ? (
               <>
                 {/* Portals based on role */}

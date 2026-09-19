@@ -1,0 +1,24 @@
+{
+  "common": {
+    "login": "Login",
+    "cart": "Cart",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "price": "Price",
+    "discount": "% Off",
+    "results": "results",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "home": {
+    "title": "Find the perfect deal for you",
+    "subtitle": "Voucher Hub",
+    "description": "Search, filter by category and compare available vouchers on the system.",
+    "howItWorks": "How does VoucherNow work?",
+    "voucherList": "Voucher List",
+    "loading": "Searching for hot deals...",
+    "noVouchersFound": "No suitable vouchers found",
+    "noVouchersDesc": "Try changing your search keywords or widening the price range to hunt for other hot promotions."
+  }
+}

@@ -59,3 +59,37 @@
   --page-gutter: clamp(1rem, 3vw, 2rem);
   --section-space: clamp(3.5rem, 7vw, 5rem);
 }
+
+.dark {
+  /* Surfaces */
+  --background: #09090b;
+  --surface: #18181b;
+  --surface-subtle: #27272a;
+  --surface-inverse: #fafafa;
+
+  /* Text */
+  --foreground: #fafafa;
+  --muted-foreground: #a1a1aa;
+  --inverse-foreground: #09090b;
+
+  /* Brand */
+  --brand: #e94f2d;
+  --brand-hover: #f06a4b;
+  --brand-subtle: #3f1910;
+  --brand-foreground: #ffffff;
+
+  /* Semantic states */
+  --success: #15803d;
+  --success-subtle: #052e16;
+  --warning: #a16207;
+  --warning-subtle: #422006;
+  --danger: #dc2626;
+  --danger-subtle: #450a0a;
+  --destructive: var(--danger);
+
+  /* Structure */
+  --border: #27272a;
+  --input: #3f3f46;
+  --ring: #e9775d;
+}
+

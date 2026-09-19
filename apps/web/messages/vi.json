@@ -1,0 +1,24 @@
+{
+  "common": {
+    "login": "Đăng nhập",
+    "cart": "Giỏ hàng",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "sort": "Sắp xếp",
+    "price": "Giá",
+    "discount": "% Giảm",
+    "results": "kết quả",
+    "previous": "Trước",
+    "next": "Sau"
+  },
+  "home": {
+    "title": "Tìm ưu đãi phù hợp với bạn",
+    "subtitle": "Kho voucher",
+    "description": "Tìm kiếm, lọc theo danh mục và so sánh các voucher đang mở bán trên hệ thống.",
+    "howItWorks": "VoucherNow hoạt động thế nào?",
+    "voucherList": "Danh sách voucher",
+    "loading": "Đang tìm kiếm deal hot...",
+    "noVouchersFound": "Không tìm thấy voucher phù hợp",
+    "noVouchersDesc": "Thử thay đổi từ khóa tìm kiếm hoặc lọc khoảng giá rộng hơn để săn nhiều khuyến mãi cực hot khác."
+  }
+}
