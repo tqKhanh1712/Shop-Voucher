@@ -16,7 +16,7 @@ describe('catalog search query', () => {
       validityStatus: 'ALL',
     });
 
-    expect(query.sql).toContain('b.search_text ~*');
+    expect(query.sql).toContain('b.body_search ~*');
     expect(query.sql).toContain('b.primary_search ~*');
     expect(query.values).toContain('\\yadidas\\y');
   });

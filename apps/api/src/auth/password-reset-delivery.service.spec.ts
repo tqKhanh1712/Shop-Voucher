@@ -19,12 +19,16 @@ describe('PasswordResetDeliveryService', () => {
 
     process.env.GMAIL_USER = 'test@gmail.com';
     process.env.GMAIL_APP_PASSWORD = 'password123';
+    delete process.env.BREVO_API_KEY;
+    delete process.env.RESEND_API_KEY;
     service = new PasswordResetDeliveryService();
   });
 
   afterEach(() => {
     delete process.env.GMAIL_USER;
     delete process.env.GMAIL_APP_PASSWORD;
+    delete process.env.BREVO_API_KEY;
+    delete process.env.RESEND_API_KEY;
     jest.restoreAllMocks();
   });
 
