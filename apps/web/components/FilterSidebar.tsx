@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Tag, X, Filter, ChevronDown, MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface CategoryFilterOption {
   code: string;
@@ -66,6 +67,7 @@ export default function FilterSidebar({
   onClear,
   onQuickPrice,
 }: FilterSidebarProps) {
+  const t = useTranslations("filter");
   const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = e.target.value.replace(/\D/g, "");
     if (!rawValue) {
@@ -158,7 +160,7 @@ export default function FilterSidebar({
       <div className="flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
         <Filter className="h-5 w-5 text-primary" />
         <h2 className="text-base font-extrabold text-slate-800 dark:text-slate-100 uppercase tracking-tight">
-          Bộ lọc tìm kiếm
+          {t("title")}
         </h2>
       </div>
 
@@ -168,7 +170,7 @@ export default function FilterSidebar({
           htmlFor="partner-filter"
           className="block text-xs font-bold text-slate-700 dark:text-slate-300"
         >
-          Đối tác cung cấp
+          {t("partnerProvider")}
         </label>
         <div className="relative">
           <button
@@ -177,9 +179,9 @@ export default function FilterSidebar({
           >
             <span className="truncate">
               {partnerId === ""
-                ? "Tất cả đối tác"
+                ? t("allPartners")
                 : partners.find((p) => p.partnerId === partnerId)
-                    ?.companyName || "Tất cả đối tác"}
+                    ?.companyName || t("allPartners")}
             </span>
             <ChevronDown className="h-4 w-4 text-slate-400 shrink-0 ml-2" />
           </button>
@@ -197,7 +199,7 @@ export default function FilterSidebar({
                     : "bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-500 dark:hover:bg-slate-700 hover:text-white"
                 }`}
               >
-                Tất cả đối tác
+                {t("allPartners")}
               </button>
               {partners.map((option) => (
                 <button
@@ -226,7 +228,7 @@ export default function FilterSidebar({
           htmlFor="status-filter"
           className="block text-xs font-bold text-slate-700 dark:text-slate-300"
         >
-          Trạng thái hiệu lực
+          {t("validityStatus")}
         </label>
         <div className="relative">
           <button
@@ -235,10 +237,10 @@ export default function FilterSidebar({
           >
             <span className="truncate">
               {validityStatus === "AVAILABLE"
-                ? "Đang mở bán"
+                ? t("onSale")
                 : validityStatus === "UPCOMING"
-                  ? "Sắp mở bán"
-                  : "Tất cả trạng thái"}
+                  ? t("upcoming")
+                  : t("allStatus")}
             </span>
             <ChevronDown className="h-4 w-4 text-slate-400 shrink-0 ml-2" />
           </button>
@@ -256,7 +258,7 @@ export default function FilterSidebar({
                     : "bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-500 dark:hover:bg-slate-700 hover:text-white"
                 }`}
               >
-                Tất cả trạng thái
+                {t("allStatus")}
               </button>
               <button
                 onClick={() => {
@@ -269,7 +271,7 @@ export default function FilterSidebar({
                     : "bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-500 dark:hover:bg-slate-700 hover:text-white"
                 }`}
               >
-                Đang mở bán
+                {t("onSale")}
               </button>
               <button
                 onClick={() => {
@@ -282,7 +284,7 @@ export default function FilterSidebar({
                     : "bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-500 dark:hover:bg-slate-700 hover:text-white"
                 }`}
               >
-                Sắp mở bán
+                {t("upcoming")}
               </button>
             </div>
           )}
@@ -292,7 +294,7 @@ export default function FilterSidebar({
       {/* Mức giảm giá */}
       <div className="space-y-3">
         <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
-          Mức giảm giá tối thiểu
+          {t("minDiscount")}
         </label>
         <div className="flex gap-2 flex-wrap">
           {[10, 20, 30, 50].map((disc) => (
@@ -317,7 +319,7 @@ export default function FilterSidebar({
               }}
               className="px-2 py-1 text-[10px] text-slate-400 hover:text-slate-600 underline"
             >
-              Bỏ chọn
+              {t("clearSelection")}
             </button>
           )}
         </div>
@@ -329,7 +331,7 @@ export default function FilterSidebar({
           htmlFor="province-filter"
           className="block text-xs font-bold text-slate-700 dark:text-slate-300"
         >
-          Khu vực
+          {t("area")}
         </label>
         <div className="relative">
           <MapPin className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
@@ -339,7 +341,7 @@ export default function FilterSidebar({
             onChange={(event) => onProvinceChange(event.target.value)}
             className="w-full appearance-none rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 py-2.5 pl-9 pr-8 text-xs font-semibold text-slate-700 dark:text-slate-300 outline-none transition-all focus:border-primary/50 focus:bg-white dark:focus:bg-slate-900"
           >
-            <option value="">Tất cả khu vực</option>
+            <option value="">{t("allAreas")}</option>
             {provinces.map((option) => (
               <option key={option.code} value={option.code}>
                 {option.name} ({option.campaignCount})
@@ -353,7 +355,7 @@ export default function FilterSidebar({
       {/* Khoảng giá */}
       <div className="space-y-3">
         <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
-          Khoảng giá
+          {t("priceRange")}
         </label>
 
         <div className="grid grid-cols-3 gap-2">
@@ -383,7 +385,7 @@ export default function FilterSidebar({
             onKeyDown={(e) => {
               if (e.key === "Enter") onFilter();
             }}
-            placeholder="Tối đa (đ)"
+            placeholder={t("maxPricePlaceholder")}
             className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-primary/50 focus:bg-white dark:focus:bg-slate-900 rounded-xl px-3 py-2 text-sm outline-none transition-all"
           />
         </div>
@@ -391,19 +393,19 @@ export default function FilterSidebar({
           onClick={onFilter}
           className="w-full py-2 bg-primary/10 hover:bg-primary text-primary hover:text-white text-xs font-bold rounded-xl transition-all border border-transparent"
         >
-          Áp dụng
+          {t("apply")}
         </button>
       </div>
 
       {/* Danh mục */}
       <div className="space-y-3">
         <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
-          Danh mục
+          {t("category")}
         </label>
         <div className="flex flex-col gap-1.5">
           {renderCategoryButton({
             code: "",
-            name: "Tất cả",
+            name: t("all"),
             campaignCount: totalCampaigns,
           })}
           {categories.map((parent) => (
@@ -429,7 +431,7 @@ export default function FilterSidebar({
           className="w-full flex items-center justify-center gap-1.5 py-2.5 bg-white dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-bold rounded-xl transition-all"
         >
           <X className="h-4 w-4" />
-          Xóa tất cả
+          {t("clearAll")}
         </button>
       </div>
     </aside>

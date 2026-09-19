@@ -118,6 +118,7 @@ function HomePageContent() {
   const searchParams = useSearchParams();
   const tHome = useTranslations('home');
   const tCommon = useTranslations('common');
+  const tFilter = useTranslations('filter');
   const [initialFilters] = useState<CatalogFilters>(() => {
     const rawMaxPrice = searchParams.get("maxPrice");
     const requestedValidityStatus = searchParams.get("validityStatus");
@@ -538,10 +539,10 @@ function HomePageContent() {
             <div className="flex items-center gap-3">
               <Grid className="h-6 w-6 text-primary" />
               <h2 className="text-xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
-                Danh sách voucher
+                {tFilter("voucherList")}
               </h2>
               <span className="text-sm font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full ml-2">
-                {paginationMeta?.total ?? campaigns.length} kết quả
+                {tFilter("results", { count: paginationMeta?.total ?? campaigns.length })}
               </span>
             </div>
 
@@ -551,11 +552,11 @@ function HomePageContent() {
                 <Sheet>
                   <SheetTrigger className="flex items-center gap-2 px-3 py-2 rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-colors font-bold text-sm border border-primary/20">
                     <Filter className="h-4 w-4" />
-                    Lọc & Sắp xếp
+                    {tFilter("filterAndSort")}
                   </SheetTrigger>
                   <SheetContent side="left" className="w-[min(22rem,88vw)] p-0">
                     <SheetHeader className="p-0 border-0 hidden">
-                      <SheetTitle>Bộ lọc</SheetTitle>
+                      <SheetTitle>{tFilter("title")}</SheetTitle>
                     </SheetHeader>
                     <div className="overflow-y-auto h-full">
                       <FilterSidebar
@@ -662,7 +663,7 @@ function HomePageContent() {
                   ) : (
                     <ArrowUpDown className="h-4 w-4 text-slate-400" />
                   )}
-                  <span className="whitespace-nowrap">Giá</span>
+                  <span className="whitespace-nowrap">{tFilter("price")}</span>
                 </button>
                 <button
                   onClick={() => {
@@ -696,7 +697,7 @@ function HomePageContent() {
                   ) : (
                     <ArrowUpDown className="h-4 w-4 text-slate-400" />
                   )}
-                  <span className="whitespace-nowrap">% Giảm</span>
+                  <span className="whitespace-nowrap">{tFilter("discountPct")}</span>
                 </button>
               </div>
             </div>
@@ -716,7 +717,7 @@ function HomePageContent() {
                 <div className="absolute top-0 left-0 w-full h-full border-4 border-primary rounded-full border-t-transparent animate-spin"></div>
               </div>
               <p className="mt-4 text-sm font-medium text-slate-500">
-                Đang tìm kiếm deal hot...
+                {tFilter("searching")}
               </p>
             </div>
           ) : campaigns.length === 0 ? (
@@ -725,11 +726,10 @@ function HomePageContent() {
                 <Ticket className="h-10 w-10 text-slate-300 dark:text-slate-600" />
               </div>
               <h3 className="text-base font-bold text-slate-800 dark:text-slate-100">
-                Không tìm thấy voucher phù hợp
+                {tFilter("notFound")}
               </h3>
               <p className="text-sm text-slate-500 dark:text-slate-400 mt-2 max-w-sm mx-auto leading-relaxed">
-                Thử thay đổi từ khóa tìm kiếm hoặc lọc khoảng giá rộng hơn để
-                săn nhiều khuyến mãi cực hot khác.
+                {tFilter("notFoundDesc")}
               </p>
             </div>
           ) : (
@@ -747,7 +747,7 @@ function HomePageContent() {
                     disabled={page === 1}
                     className="px-4 py-2 rounded-xl text-sm font-bold transition-all border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600"
                   >
-                    Trước
+                    {tFilter("prev")}
                   </button>
                   <div className="flex items-center gap-1">
                     {Array.from({ length: paginationMeta.totalPages }).map(
@@ -797,7 +797,7 @@ function HomePageContent() {
                     disabled={page === paginationMeta.totalPages}
                     className="px-4 py-2 rounded-xl text-sm font-bold transition-all border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600"
                   >
-                    Sau
+                    {tFilter("next")}
                   </button>
                 </div>
               )}
