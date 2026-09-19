@@ -68,7 +68,7 @@ function LoginForm() {
 
         {/* THÔNG BÁO CHO ĐỐI TÁC VỪA ĐĂNG KÝ */}
         {showPartnerInfo && (
-          <div className="flex items-start gap-3 rounded-lg bg-secondary p-4 border border-primary/20 text-primary text-sm leading-relaxed">
+          <div className="flex items-start gap-3 rounded-lg bg-secondary dark:bg-secondary/40 p-4 border border-primary/20 dark:border-primary/30 text-primary text-sm leading-relaxed">
             <Info className="h-5 w-5 shrink-0 text-primary mt-0.5" />
             <div>
               <span className="font-semibold">Đăng ký đối tác thành công!</span>
@@ -81,8 +81,8 @@ function LoginForm() {
 
         {/* THÔNG BÁO LỖI NẾU ĐĂNG NHẬP THẤT BẠI */}
         {errorMsg && (
-          <div className="flex items-center gap-3 rounded-lg bg-red-500/10 p-4 border border-red-500/20 text-red-800 text-sm">
-            <AlertCircle className="h-5 w-5 shrink-0 text-red-600" />
+          <div className="flex items-center gap-3 rounded-lg bg-red-500/10 p-4 border border-red-500/20 text-red-800 dark:text-red-400 text-sm">
+            <AlertCircle className="h-5 w-5 shrink-0 text-red-600 dark:text-red-500" />
             <p className="font-medium">{errorMsg}</p>
           </div>
         )}
@@ -176,7 +176,7 @@ function LoginForm() {
               Đăng ký ngay
             </Link>
           </div>
-          <Link href="/" className="inline-flex items-center gap-1.5 text-slate-500 hover:text-primary font-medium transition-colors">
+          <Link href="/" className="inline-flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary font-medium transition-colors">
             <ArrowLeft className="h-4 w-4" />
             Trở về trang chủ
           </Link>

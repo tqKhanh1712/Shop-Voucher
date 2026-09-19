@@ -61,16 +61,16 @@ export default function ForgotPasswordPage() {
         </div>
 
         {errorMsg && (
-          <div className="flex items-center gap-3 rounded-lg bg-red-500/10 p-4 border border-red-500/20 text-red-800 text-sm">
-            <AlertCircle className="h-5 w-5 shrink-0 text-red-600" />
+          <div className="flex items-center gap-3 rounded-lg bg-red-500/10 p-4 border border-red-500/20 text-red-800 dark:text-red-400 text-sm">
+            <AlertCircle className="h-5 w-5 shrink-0 text-red-600 dark:text-red-500" />
             <p className="font-medium">{errorMsg}</p>
           </div>
         )}
 
         {submitted ? (
-          <div className="space-y-5 rounded-xl border border-green-200 bg-green-50 p-5 text-sm text-green-800">
+          <div className="space-y-5 rounded-xl border border-green-200 dark:border-green-900/50 bg-green-50 dark:bg-green-900/20 p-5 text-sm text-green-800 dark:text-green-400">
             <div className="flex items-center gap-3">
-              <CheckCircle2 className="h-5 w-5 text-green-600" />
+              <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-500" />
               <p className="font-semibold">Yêu cầu đặt lại mật khẩu đã được gửi.</p>
             </div>
             <p>

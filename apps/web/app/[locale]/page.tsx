@@ -442,7 +442,7 @@ function HomePageContent() {
         className="mx-auto w-full max-w-7xl px-4 pt-6 sm:px-6 lg:px-8"
         aria-labelledby="catalog-title"
       >
-        <div className="flex flex-col gap-5 rounded-2xl border border-slate-200 bg-white px-6 py-6 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <div className="flex flex-col gap-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-6 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-primary">
               {tHome('subtitle')}
@@ -537,10 +537,10 @@ function HomePageContent() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 pb-4 gap-4">
             <div className="flex items-center gap-3">
               <Grid className="h-6 w-6 text-primary" />
-              <h2 className="text-xl font-extrabold text-slate-800 tracking-tight">
+              <h2 className="text-xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
                 Danh sách voucher
               </h2>
-              <span className="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full ml-2">
+              <span className="text-sm font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full ml-2">
                 {paginationMeta?.total ?? campaigns.length} kết quả
               </span>
             </div>
@@ -629,7 +629,7 @@ function HomePageContent() {
               </div>
 
               {/* Sort Buttons */}
-              <div className="flex items-center bg-slate-100 p-1 rounded-xl shrink-0 gap-1">
+              <div className="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl shrink-0 gap-1">
                 <button
                   onClick={() => {
                     const val = (
@@ -651,8 +651,8 @@ function HomePageContent() {
                   }}
                   className={`flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${
                     sortPrice !== ""
-                      ? "bg-white text-primary shadow-sm ring-1 ring-slate-200/50"
-                      : "text-slate-500 hover:text-slate-800 hover:bg-slate-200/50"
+                      ? "bg-white dark:bg-slate-900 text-primary shadow-sm ring-1 ring-slate-200/50 dark:ring-slate-700/50"
+                      : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50"
                   }`}
                 >
                   {sortPrice === "asc" ? (
@@ -685,8 +685,8 @@ function HomePageContent() {
                   }}
                   className={`flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${
                     sortDiscount !== ""
-                      ? "bg-white text-primary shadow-sm ring-1 ring-slate-200/50"
-                      : "text-slate-500 hover:text-slate-800 hover:bg-slate-200/50"
+                      ? "bg-white dark:bg-slate-900 text-primary shadow-sm ring-1 ring-slate-200/50 dark:ring-slate-700/50"
+                      : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50"
                   }`}
                 >
                   {sortDiscount === "asc" ? (
@@ -720,14 +720,14 @@ function HomePageContent() {
               </p>
             </div>
           ) : campaigns.length === 0 ? (
-            <div className="text-center py-24 bg-white rounded-2xl border border-slate-100 shadow-sm">
-              <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Ticket className="h-10 w-10 text-slate-300" />
+            <div className="text-center py-24 bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+              <div className="w-20 h-20 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Ticket className="h-10 w-10 text-slate-300 dark:text-slate-600" />
               </div>
-              <h3 className="text-base font-bold text-slate-800">
+              <h3 className="text-base font-bold text-slate-800 dark:text-slate-100">
                 Không tìm thấy voucher phù hợp
               </h3>
-              <p className="text-sm text-slate-500 mt-2 max-w-sm mx-auto leading-relaxed">
+              <p className="text-sm text-slate-500 dark:text-slate-400 mt-2 max-w-sm mx-auto leading-relaxed">
                 Thử thay đổi từ khóa tìm kiếm hoặc lọc khoảng giá rộng hơn để
                 săn nhiều khuyến mãi cực hot khác.
               </p>
@@ -745,7 +745,7 @@ function HomePageContent() {
                   <button
                     onClick={() => handlePageChange(Math.max(1, page - 1))}
                     disabled={page === 1}
-                    className="px-4 py-2 rounded-xl text-sm font-bold transition-all border border-slate-200 bg-white text-slate-600 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 hover:border-slate-300"
+                    className="px-4 py-2 rounded-xl text-sm font-bold transition-all border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600"
                   >
                     Trước
                   </button>
@@ -767,7 +767,7 @@ function HomePageContent() {
                               className={`w-10 h-10 rounded-xl text-sm font-bold transition-all ${
                                 isActive
                                   ? "bg-primary text-white shadow-sm ring-1 ring-primary/20"
-                                  : "bg-transparent text-slate-600 hover:bg-slate-100"
+                                  : "bg-transparent text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
                               }`}
                             >
                               {pageNum}
@@ -795,7 +795,7 @@ function HomePageContent() {
                       )
                     }
                     disabled={page === paginationMeta.totalPages}
-                    className="px-4 py-2 rounded-xl text-sm font-bold transition-all border border-slate-200 bg-white text-slate-600 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 hover:border-slate-300"
+                    className="px-4 py-2 rounded-xl text-sm font-bold transition-all border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600"
                   >
                     Sau
                   </button>

@@ -45,7 +45,7 @@ export default function HeroBanner() {
 
           <div className="relative mx-auto hidden min-h-[23rem] w-full max-w-lg md:block" aria-hidden="true">
             <div className="absolute right-7 top-1 h-64 w-64 rounded-full bg-amber-200/20 blur-3xl" />
-            <div className="absolute right-0 top-5 h-[17.5rem] w-[78%] overflow-hidden rounded-[1.65rem] border border-white/45 bg-white p-5 text-slate-900 shadow-[0_25px_45px_-18px_rgba(69,10,10,.65)] hero-float">
+            <div className="absolute right-0 top-5 h-[17.5rem] w-[78%] overflow-hidden rounded-[1.65rem] border border-white/45 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 text-slate-900 dark:text-slate-100 shadow-[0_25px_45px_-18px_rgba(69,10,10,.65)] hero-float">
               <div className="absolute right-0 top-0 h-20 w-20 rounded-bl-[2.5rem] bg-orange-100" />
               <div className="relative flex items-start justify-between gap-4">
                 <div><p className="text-xs font-extrabold uppercase tracking-[0.16em] text-primary">Ưu đãi nổi bật</p><p className="mt-1.5 text-xl font-black tracking-tight">Một ngày thật ngon</p></div>
@@ -59,7 +59,7 @@ export default function HeroBanner() {
             </div>
 
             <div className="absolute bottom-1 left-0 z-10 flex w-[55%] items-center gap-3 rounded-2xl border border-white/40 bg-slate-950/95 p-3.5 text-white shadow-2xl shadow-orange-950/35 backdrop-blur-md hero-float-delayed">
-              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white text-slate-900"><QrCode className="relative z-10 h-7 w-7" /><span className="absolute left-0 top-0 h-1.5 w-full bg-primary/80 receipt-scan" /></span>
+              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100"><QrCode className="relative z-10 h-7 w-7" /><span className="absolute left-0 top-0 h-1.5 w-full bg-primary/80 receipt-scan" /></span>
               <div><p className="text-xs font-extrabold uppercase tracking-[0.13em] text-orange-300">QR cá nhân</p><p className="mt-1 text-sm font-bold leading-tight">Lưu thẳng vào ví voucher</p></div>
             </div>
           </div>

@@ -199,7 +199,7 @@ export default function VoucherCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
       whileHover={{ y: -4 }}
-      className="group relative flex flex-col bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+      className="group relative flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
     >
       {typeof document !== "undefined" &&
         createPortal(
@@ -213,8 +213,8 @@ export default function VoucherCard({
                 role="status"
                 className={`fixed right-4 top-4 z-[100] flex w-[calc(100vw-2rem)] max-w-sm gap-3 rounded-2xl border p-4 shadow-2xl backdrop-blur-md sm:right-6 sm:top-6 ${
                   toast.kind === "success"
-                    ? "border-emerald-200 bg-white/95 text-slate-800"
-                    : "border-red-200 bg-white/95 text-slate-800"
+                    ? "border-emerald-200 dark:border-emerald-900/50 bg-white/95 dark:bg-slate-800/95 text-slate-800 dark:text-slate-100"
+                    : "border-red-200 dark:border-red-900/50 bg-white/95 dark:bg-slate-800/95 text-slate-800 dark:text-slate-100"
                 }`}
               >
                 <CheckCircle2
@@ -230,7 +230,7 @@ export default function VoucherCard({
                       ? "Đã thêm vào giỏ hàng"
                       : "Chưa thể thêm voucher"}
                   </p>
-                  <p className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-slate-500">
+                  <p className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
                     {toast.message}
                   </p>
                   {toast.kind === "success" && (
@@ -245,7 +245,7 @@ export default function VoucherCard({
                 <button
                   type="button"
                   onClick={() => setToast(null)}
-                  className="-mr-1 -mt-1 rounded-lg p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
+                  className="-mr-1 -mt-1 rounded-lg p-1 text-slate-400 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-700 dark:hover:text-slate-300"
                   aria-label="Đóng thông báo"
                 >
                   <X className="h-4 w-4" />
@@ -262,7 +262,7 @@ export default function VoucherCard({
       >
         {/* Top Image / Gradient Area */}
         <div
-          className={`relative h-40 w-full p-4 flex flex-col justify-between overflow-hidden ${!thumbnailUrl ? `bg-gradient-to-br ${bgGradient}` : "bg-slate-100"}`}
+          className={`relative h-40 w-full p-4 flex flex-col justify-between overflow-hidden ${!thumbnailUrl ? `bg-gradient-to-br ${bgGradient}` : "bg-slate-100 dark:bg-slate-800"}`}
         >
           {thumbnailUrl ? (
             <>
@@ -288,7 +288,7 @@ export default function VoucherCard({
           )}
 
           <div className="relative flex justify-between items-start">
-            <span className="inline-block text-[10px] font-black text-slate-800 bg-white/90 backdrop-blur-md rounded-full px-2.5 py-1 uppercase tracking-wider shadow-sm">
+            <span className="inline-block text-[10px] font-black text-slate-800 dark:text-slate-100 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-full px-2.5 py-1 uppercase tracking-wider shadow-sm">
               {categoryName}
             </span>
 
@@ -303,21 +303,21 @@ export default function VoucherCard({
         {/* Content Area */}
         <div className="p-3 sm:p-4 flex flex-col flex-grow">
           <h3
-            className="text-sm font-bold text-slate-800 line-clamp-2 min-h-[40px] group-hover:text-primary transition-colors"
+            className="text-sm font-bold text-slate-800 dark:text-slate-100 line-clamp-2 min-h-[40px] group-hover:text-primary dark:group-hover:text-primary transition-colors"
             title={c.title}
           >
             {c.title}
           </h3>
 
-          <div className="mt-2 flex items-center gap-1.5 text-[11px] text-slate-500">
+          <div className="mt-2 flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400">
             <Store className="h-3.5 w-3.5 shrink-0 text-primary/70" />
             <span
-              className="truncate max-w-[45%] font-semibold text-slate-600"
+              className="truncate max-w-[45%] font-semibold text-slate-600 dark:text-slate-300"
               title={brandName}
             >
               {brandName}
             </span>
-            <span className="text-slate-300 mx-0.5">•</span>
+            <span className="text-slate-300 dark:text-slate-600 mx-0.5">•</span>
             <MapPin className="h-3.5 w-3.5 shrink-0 text-slate-400" />
             <span
               className="truncate"
@@ -333,7 +333,7 @@ export default function VoucherCard({
 
           <div className="mt-3 sm:mt-4 flex items-end justify-between">
             <div>
-              <div className="text-xs text-slate-400 line-through font-medium mb-0.5">
+              <div className="text-xs text-slate-400 dark:text-slate-500 line-through font-medium mb-0.5">
                 {Number(c.originalPrice).toLocaleString("vi-VN")} đ
               </div>
               <div className="text-lg font-black text-primary leading-none">
@@ -351,7 +351,7 @@ export default function VoucherCard({
             >
               {isUpcoming ? (
                 <div
-                  className="flex h-9 items-center gap-1.5 rounded-lg border border-amber-200 bg-amber-50 px-3 text-[11px] font-bold text-amber-800"
+                  className="flex h-9 items-center gap-1.5 rounded-lg border border-amber-200 dark:border-amber-900/50 bg-amber-50 dark:bg-amber-900/20 px-3 text-[11px] font-bold text-amber-800 dark:text-amber-500"
                   title={`Mở bán ngày ${upcomingDateFormatter.format(saleStartTime)}`}
                 >
                   <Clock className="h-3.5 w-3.5" />
@@ -386,7 +386,7 @@ export default function VoucherCard({
           </div>
 
           <div className="mt-4">
-            <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+            <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
               <div
                 className="bg-gradient-to-r from-orange-400 to-primary h-full rounded-full"
                 style={{ width: `${soldPercent}%` }}
@@ -396,7 +396,7 @@ export default function VoucherCard({
               <span className="text-primary flex items-center gap-1">
                 <Flame className="h-3 w-3" /> Đã bán {c.soldQuantity}
               </span>
-              <span className="text-slate-500">Còn lại {remaining}</span>
+              <span className="text-slate-500 dark:text-slate-400">Còn lại {remaining}</span>
             </div>
           </div>
         </div>

@@ -133,7 +133,7 @@ export default function CartPage() {
     return (
       <>
         <Header />
-        <div className="flex min-h-screen items-center justify-center bg-slate-50">
+        <div className="flex min-h-screen items-center justify-center bg-slate-50 dark:bg-slate-900">
           <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary mx-auto"></div>
         </div>
       </>
@@ -152,26 +152,26 @@ export default function CartPage() {
   );
 
   return (
-    <div className="min-h-screen bg-slate-50/50 font-sans flex flex-col">
+    <div className="min-h-screen bg-slate-50/50 dark:bg-background font-sans flex flex-col">
       <Header />
       <div className="flex-1 py-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-8">
           
 
 
-          <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
+          <div className="flex items-center gap-3 pb-4 border-b border-slate-200 dark:border-slate-800">
             <div className="bg-primary/10 p-3 rounded-2xl">
               <ShoppingCart className="h-7 w-7 text-primary" />
             </div>
             <div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-800">Giỏ hàng của bạn</h1>
-              <p className="text-sm text-slate-500 mt-1">Quản lý và thanh toán các voucher bạn đã chọn</p>
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-800 dark:text-slate-100">Giỏ hàng của bạn</h1>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Quản lý và thanh toán các voucher bạn đã chọn</p>
             </div>
           </div>
 
         {errorMsg && (
-          <div className="bg-red-500/10 border border-red-500/20 text-red-800 text-sm p-4 rounded-xl flex items-center gap-3">
-            <ShieldAlert className="h-5 w-5 text-red-600 shrink-0" />
+          <div className="bg-red-500/10 border border-red-500/20 text-red-800 dark:text-red-400 text-sm p-4 rounded-xl flex items-center gap-3">
+            <ShieldAlert className="h-5 w-5 text-red-600 dark:text-red-500 shrink-0" />
             <span>{errorMsg}</span>
           </div>
         )}
@@ -250,18 +250,18 @@ export default function CartPage() {
                           type="button"
                           disabled={item.quantity <= 1}
                           onClick={() => handleUpdateQty(item.cartItemId, item.quantity - 1, maxBuyable)}
-                          className="h-7 w-7 rounded-lg border border-border flex items-center justify-center font-bold text-foreground hover:bg-slate-50 disabled:opacity-50 text-xs"
+                          className="h-7 w-7 rounded-lg border border-border flex items-center justify-center font-bold text-foreground hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50 text-xs"
                         >
                           -
                         </button>
-                        <span className="h-7 w-9 border border-border rounded-lg flex items-center justify-center text-xs font-bold text-foreground bg-slate-50/50">
+                        <span className="h-7 w-9 border border-border rounded-lg flex items-center justify-center text-xs font-bold text-foreground bg-slate-50/50 dark:bg-slate-800/50">
                           {item.quantity}
                         </span>
                         <button
                           type="button"
                           disabled={item.quantity >= maxBuyable}
                           onClick={() => handleUpdateQty(item.cartItemId, item.quantity + 1, maxBuyable)}
-                          className="h-7 w-7 rounded-lg border border-border flex items-center justify-center font-bold text-foreground hover:bg-slate-50 disabled:opacity-50 text-xs"
+                          className="h-7 w-7 rounded-lg border border-border flex items-center justify-center font-bold text-foreground hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50 text-xs"
                         >
                           +
                         </button>
@@ -308,7 +308,7 @@ export default function CartPage() {
                   </div>
                 </div>
 
-                <div className="rounded-lg bg-slate-50 border border-slate-100 p-3 flex gap-2 text-[10px] text-muted">
+                <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 p-3 flex gap-2 text-[10px] text-muted">
                   <Info className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                   <span>Giá bán trên đã bao gồm VAT. Voucher không thể quy đổi thành tiền mặt sau khi mua.</span>
                 </div>

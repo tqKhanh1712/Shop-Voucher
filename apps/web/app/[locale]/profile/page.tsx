@@ -217,7 +217,7 @@ export default function UserProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans flex flex-col">
+    <div className="min-h-screen bg-slate-50 dark:bg-background font-sans flex flex-col">
       <Header />
       <main className="flex-grow w-full max-w-3xl mx-auto py-10 px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-sm space-y-6">
@@ -237,14 +237,14 @@ export default function UserProfilePage() {
           </div>
 
           {successMsg && (
-            <div className="bg-green-500/10 border border-green-500/20 text-green-800 text-xs p-4 rounded-xl flex items-center gap-3">
+            <div className="bg-green-500/10 border border-green-500/20 text-green-800 dark:text-green-400 text-xs p-4 rounded-xl flex items-center gap-3">
               <CheckCircle className="h-5 w-5 text-green-600 shrink-0" />
               <span>{successMsg}</span>
             </div>
           )}
 
           {errorMsg && (
-            <div className="bg-red-500/10 border border-red-500/20 text-red-800 text-xs p-4 rounded-xl flex items-center gap-3">
+            <div className="bg-red-500/10 border border-red-500/20 text-red-800 dark:text-red-400 text-xs p-4 rounded-xl flex items-center gap-3">
               <AlertCircle className="h-5 w-5 text-red-600 shrink-0" />
               <span>{errorMsg}</span>
             </div>
@@ -268,7 +268,7 @@ export default function UserProfilePage() {
                     type="text"
                     value={user.email || ""}
                     disabled
-                    className="block w-full rounded-lg border border-border bg-slate-50 py-2.5 pl-9 pr-3 text-xs text-muted focus:outline-none cursor-not-allowed"
+                    className="block w-full rounded-lg border border-border bg-slate-50 dark:bg-slate-800/50 py-2.5 pl-9 pr-3 text-xs text-muted focus:outline-none cursor-not-allowed"
                   />
                   <Mail className="absolute left-3 top-3.5 h-3.5 w-3.5 text-slate-400" />
                 </div>
@@ -289,7 +289,7 @@ export default function UserProfilePage() {
                     {...register("fullName")}
                     disabled={user.role !== "CUSTOMER"}
                     className={`block w-full rounded-lg border border-border py-2.5 pl-9 pr-3 text-xs text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all ${user.role !== "CUSTOMER"
-                      ? "bg-slate-50 text-muted cursor-not-allowed"
+                      ? "bg-slate-50 dark:bg-slate-800/50 text-muted cursor-not-allowed"
                       : "bg-card"
                       }`}
                   />
@@ -434,7 +434,7 @@ export default function UserProfilePage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-hover text-white px-6 py-3 text-xs font-bold transition-colors disabled:bg-slate-300 shadow shadow-primary/10"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-hover text-white px-6 py-3 text-xs font-bold transition-colors disabled:bg-slate-300 dark:disabled:bg-slate-800 shadow shadow-primary/10"
               >
                 {submitting ? "Đang cập nhật..." : "Cập nhật hồ sơ"}
               </button>
@@ -443,13 +443,13 @@ export default function UserProfilePage() {
 
           {/* KHU VỰC NGUY HIỂM: XÓA TÀI KHOẢN (Chỉ dành cho CUSTOMER) */}
           {user.role === "CUSTOMER" && (
-            <div className="pt-6 border-t border-dashed border-red-200 space-y-4">
-              <div className="rounded-xl border border-red-100 bg-red-500/5 p-4 space-y-3">
-                <h4 className="text-xs font-bold text-red-800 flex items-center gap-1">
+            <div className="pt-6 border-t border-dashed border-red-200 dark:border-red-900/50 space-y-4">
+              <div className="rounded-xl border border-red-100 dark:border-red-900/50 bg-red-500/5 dark:bg-red-900/20 p-4 space-y-3">
+                <h4 className="text-xs font-bold text-red-800 dark:text-red-400 flex items-center gap-1">
                   <AlertCircle className="h-4 w-4 text-red-600" />
                   Khu vực xóa tài khoản
                 </h4>
-                <p className="text-[11px] text-red-700 leading-relaxed">
+                <p className="text-[11px] text-red-700 dark:text-red-300 leading-relaxed">
                   Nếu bạn quyết định không sử dụng dịch vụ của chúng tôi nữa,
                   bạn có thể tự xóa tài khoản của mình. Mọi thông tin cá nhân và
                   tài sản mua sắm của bạn sẽ được xóa vĩnh viễn khỏi cơ sở dữ

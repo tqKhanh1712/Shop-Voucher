@@ -114,10 +114,10 @@ export default function FilterSidebar({
           isActive
             ? "bg-primary text-white shadow-md"
             : isDisabled
-              ? "cursor-not-allowed text-slate-300"
+              ? "cursor-not-allowed text-slate-300 dark:text-slate-600"
               : nested
-                ? "text-slate-500 hover:bg-slate-50 hover:text-slate-900"
-                : "text-slate-600 hover:bg-slate-50 hover:text-slate-900 border border-transparent"
+                ? "text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100"
+                : "text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100 border border-transparent"
         }`}
       >
         <span className="flex items-center gap-2">
@@ -130,7 +130,7 @@ export default function FilterSidebar({
                 hasChildren
                   ? isActive
                     ? "hover:bg-white/20 cursor-pointer"
-                    : "hover:bg-slate-200 cursor-pointer"
+                    : "hover:bg-slate-200 dark:hover:bg-slate-700 cursor-pointer"
                   : "opacity-30"
               }`}
             >
@@ -154,10 +154,10 @@ export default function FilterSidebar({
   };
 
   return (
-    <aside className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm space-y-6">
-      <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
+    <aside className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-5 shadow-sm space-y-6">
+      <div className="flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
         <Filter className="h-5 w-5 text-primary" />
-        <h2 className="text-base font-extrabold text-slate-800 uppercase tracking-tight">
+        <h2 className="text-base font-extrabold text-slate-800 dark:text-slate-100 uppercase tracking-tight">
           Bộ lọc tìm kiếm
         </h2>
       </div>
@@ -166,14 +166,14 @@ export default function FilterSidebar({
       <div className="space-y-3">
         <label
           htmlFor="partner-filter"
-          className="block text-xs font-bold text-slate-700"
+          className="block text-xs font-bold text-slate-700 dark:text-slate-300"
         >
           Đối tác cung cấp
         </label>
         <div className="relative">
           <button
             onClick={() => setIsPartnerOpen(!isPartnerOpen)}
-            className="w-full flex items-center justify-between appearance-none rounded-xl border border-slate-200 bg-slate-50 py-2.5 px-3 text-xs font-semibold text-slate-700 outline-none transition-all focus:border-primary/50 focus:bg-white"
+            className="w-full flex items-center justify-between appearance-none rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 py-2.5 px-3 text-xs font-semibold text-slate-700 dark:text-slate-200 outline-none transition-all focus:border-primary/50 focus:bg-white dark:focus:bg-slate-900"
           >
             <span className="truncate">
               {partnerId === ""
@@ -185,7 +185,7 @@ export default function FilterSidebar({
           </button>
 
           {isPartnerOpen && (
-            <div className="absolute z-50 w-full mt-1 bg-white border border-slate-300 rounded shadow-md max-h-[160px] overflow-y-auto py-1 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent text-sm">
+            <div className="absolute z-50 w-full mt-1 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded shadow-md max-h-[160px] overflow-y-auto py-1 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent text-sm">
               <button
                 onClick={() => {
                   onPartnerChange("");
@@ -194,7 +194,7 @@ export default function FilterSidebar({
                 className={`w-full text-left px-3 py-1.5 transition-none ${
                   partnerId === ""
                     ? "bg-slate-500 text-white"
-                    : "bg-white text-slate-800 hover:bg-slate-500 hover:text-white"
+                    : "bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-500 dark:hover:bg-slate-700 hover:text-white"
                 }`}
               >
                 Tất cả đối tác
@@ -209,7 +209,7 @@ export default function FilterSidebar({
                   className={`w-full text-left px-3 py-1.5 transition-none truncate ${
                     partnerId === option.partnerId
                       ? "bg-slate-500 text-white"
-                      : "bg-white text-slate-800 hover:bg-slate-500 hover:text-white"
+                      : "bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-500 dark:hover:bg-slate-700 hover:text-white"
                   }`}
                 >
                   {option.companyName}
@@ -224,14 +224,14 @@ export default function FilterSidebar({
       <div className="space-y-3">
         <label
           htmlFor="status-filter"
-          className="block text-xs font-bold text-slate-700"
+          className="block text-xs font-bold text-slate-700 dark:text-slate-300"
         >
           Trạng thái hiệu lực
         </label>
         <div className="relative">
           <button
             onClick={() => setIsStatusOpen(!isStatusOpen)}
-            className="w-full flex items-center justify-between appearance-none rounded-xl border border-slate-200 bg-slate-50 py-2.5 px-3 text-xs font-semibold text-slate-700 outline-none transition-all focus:border-primary/50 focus:bg-white"
+            className="w-full flex items-center justify-between appearance-none rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 py-2.5 px-3 text-xs font-semibold text-slate-700 dark:text-slate-200 outline-none transition-all focus:border-primary/50 focus:bg-white dark:focus:bg-slate-900"
           >
             <span className="truncate">
               {validityStatus === "AVAILABLE"
@@ -244,7 +244,7 @@ export default function FilterSidebar({
           </button>
 
           {isStatusOpen && (
-            <div className="absolute z-50 w-full mt-1 bg-white border border-slate-300 rounded shadow-md max-h-[160px] overflow-y-auto py-1 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent text-sm">
+            <div className="absolute z-50 w-full mt-1 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded shadow-md max-h-[160px] overflow-y-auto py-1 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent text-sm">
               <button
                 onClick={() => {
                   onValidityChange("ALL");
@@ -253,7 +253,7 @@ export default function FilterSidebar({
                 className={`w-full text-left px-3 py-1.5 transition-none ${
                   validityStatus === "ALL"
                     ? "bg-slate-500 text-white"
-                    : "bg-white text-slate-800 hover:bg-slate-500 hover:text-white"
+                    : "bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-500 dark:hover:bg-slate-700 hover:text-white"
                 }`}
               >
                 Tất cả trạng thái
@@ -266,7 +266,7 @@ export default function FilterSidebar({
                 className={`w-full text-left px-3 py-1.5 transition-none ${
                   validityStatus === "AVAILABLE"
                     ? "bg-slate-500 text-white"
-                    : "bg-white text-slate-800 hover:bg-slate-500 hover:text-white"
+                    : "bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-500 dark:hover:bg-slate-700 hover:text-white"
                 }`}
               >
                 Đang mở bán
@@ -279,7 +279,7 @@ export default function FilterSidebar({
                 className={`w-full text-left px-3 py-1.5 transition-none ${
                   validityStatus === "UPCOMING"
                     ? "bg-slate-500 text-white"
-                    : "bg-white text-slate-800 hover:bg-slate-500 hover:text-white"
+                    : "bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-500 dark:hover:bg-slate-700 hover:text-white"
                 }`}
               >
                 Sắp mở bán
@@ -291,7 +291,7 @@ export default function FilterSidebar({
 
       {/* Mức giảm giá */}
       <div className="space-y-3">
-        <label className="block text-xs font-bold text-slate-700">
+        <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
           Mức giảm giá tối thiểu
         </label>
         <div className="flex gap-2 flex-wrap">
@@ -304,7 +304,7 @@ export default function FilterSidebar({
               className={`px-3 py-1.5 text-xs font-bold rounded-lg border transition-all ${
                 minDiscount === disc.toString()
                   ? "bg-primary text-white border-primary shadow-sm"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-primary hover:text-primary"
+                  : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-primary hover:text-primary"
               }`}
             >
               &ge; {disc}%
@@ -327,7 +327,7 @@ export default function FilterSidebar({
       <div className="space-y-3">
         <label
           htmlFor="province-filter"
-          className="block text-xs font-bold text-slate-700"
+          className="block text-xs font-bold text-slate-700 dark:text-slate-300"
         >
           Khu vực
         </label>
@@ -337,7 +337,7 @@ export default function FilterSidebar({
             id="province-filter"
             value={province}
             onChange={(event) => onProvinceChange(event.target.value)}
-            className="w-full appearance-none rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-9 pr-8 text-xs font-semibold text-slate-700 outline-none transition-all focus:border-primary/50 focus:bg-white"
+            className="w-full appearance-none rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 py-2.5 pl-9 pr-8 text-xs font-semibold text-slate-700 dark:text-slate-300 outline-none transition-all focus:border-primary/50 focus:bg-white dark:focus:bg-slate-900"
           >
             <option value="">Tất cả khu vực</option>
             {provinces.map((option) => (
@@ -352,7 +352,7 @@ export default function FilterSidebar({
 
       {/* Khoảng giá */}
       <div className="space-y-3">
-        <label className="block text-xs font-bold text-slate-700">
+        <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
           Khoảng giá
         </label>
 
@@ -367,7 +367,7 @@ export default function FilterSidebar({
               className={`text-center px-1 py-1.5 text-[11px] font-bold rounded-lg border transition-all truncate ${
                 maxPrice === qp.value
                   ? "bg-primary text-white border-primary shadow-sm"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-primary hover:text-primary"
+                  : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-primary hover:text-primary"
               }`}
             >
               {qp.label}
@@ -384,7 +384,7 @@ export default function FilterSidebar({
               if (e.key === "Enter") onFilter();
             }}
             placeholder="Tối đa (đ)"
-            className="w-full bg-slate-50 border border-slate-200 focus:border-primary/50 focus:bg-white rounded-xl px-3 py-2 text-sm outline-none transition-all"
+            className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-primary/50 focus:bg-white dark:focus:bg-slate-900 rounded-xl px-3 py-2 text-sm outline-none transition-all"
           />
         </div>
         <button
@@ -397,7 +397,7 @@ export default function FilterSidebar({
 
       {/* Danh mục */}
       <div className="space-y-3">
-        <label className="block text-xs font-bold text-slate-700">
+        <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
           Danh mục
         </label>
         <div className="flex flex-col gap-1.5">
@@ -423,10 +423,10 @@ export default function FilterSidebar({
       </div>
 
       {/* Xóa lọc */}
-      <div className="pt-2 border-t border-slate-100">
+      <div className="pt-2 border-t border-slate-100 dark:border-slate-800">
         <button
           onClick={onClear}
-          className="w-full flex items-center justify-center gap-1.5 py-2.5 bg-white border-2 border-slate-100 hover:border-slate-300 hover:bg-slate-50 text-slate-600 text-xs font-bold rounded-xl transition-all"
+          className="w-full flex items-center justify-center gap-1.5 py-2.5 bg-white dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-bold rounded-xl transition-all"
         >
           <X className="h-4 w-4" />
           Xóa tất cả

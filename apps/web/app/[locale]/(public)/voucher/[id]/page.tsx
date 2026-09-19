@@ -275,8 +275,8 @@ export default function VoucherDetailPage() {
 
         {/* THÔNG BÁO DEMO MUA HÀNG */}
         {demoMessage && (
-          <div className="flex items-center gap-3 rounded-lg bg-green-500/10 p-4 border border-green-500/20 text-green-800 text-sm leading-relaxed animate-in slide-in-from-top-2">
-            <CheckCircle className="h-5 w-5 shrink-0 text-green-600" />
+          <div className="flex items-center gap-3 rounded-lg bg-green-500/10 p-4 border border-green-500/20 text-green-800 dark:text-green-400 text-sm leading-relaxed animate-in slide-in-from-top-2">
+            <CheckCircle className="h-5 w-5 shrink-0 text-green-600 dark:text-green-500" />
             <p className="font-semibold">{demoMessage}</p>
           </div>
         )}
@@ -288,7 +288,7 @@ export default function VoucherDetailPage() {
           <div className="lg:col-span-2 space-y-6">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-sm space-y-5">
               {campaign.thumbnailUrl && (
-                <div className="relative h-64 overflow-hidden rounded-xl border border-slate-100 bg-slate-50">
+                <div className="relative h-64 overflow-hidden rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
                   <Image
                     src={campaign.thumbnailUrl}
                     alt=""
@@ -328,14 +328,14 @@ export default function VoucherDetailPage() {
               {/* Nội dung gốc từ catalog */}
               <div className="border-t border-border pt-4 space-y-3">
                 <h3 className="text-sm font-bold text-foreground">Thông tin sản phẩm</h3>
-                <div className="text-xs text-muted leading-relaxed whitespace-pre-line bg-slate-50 border border-slate-100 p-4 rounded-xl">
+                <div className="text-xs text-muted leading-relaxed whitespace-pre-line bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 p-4 rounded-xl">
                   {campaign.description || 'Chưa có thông tin chi tiết cho sản phẩm này.'}
                 </div>
               </div>
 
               <div className="border-t border-border pt-4 space-y-3">
                 <h3 className="text-sm font-bold text-foreground">Chú ý & Điều kiện áp dụng</h3>
-                <div className="text-xs text-muted leading-relaxed whitespace-pre-line bg-amber-50/50 border border-amber-100 p-4 rounded-xl">
+                <div className="text-xs text-muted leading-relaxed whitespace-pre-line bg-amber-50/50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-900/50 p-4 rounded-xl">
                   {campaign.termsAndConditions || 'Chưa có điều kiện áp dụng cho sản phẩm này.'}
                 </div>
                 {campaign.sourceUrl && (
@@ -369,7 +369,7 @@ export default function VoucherDetailPage() {
                 <h3 className="text-sm font-bold text-foreground">Chi nhánh áp dụng ({campaign.campaignBranches.length})</h3>
                 <div className="grid grid-cols-1 gap-3">
                   {campaign.campaignBranches.map((cb) => (
-                    <div key={cb.branch.branchId} className="flex gap-2 p-3 bg-slate-50 border border-slate-100 rounded-xl">
+                    <div key={cb.branch.branchId} className="flex gap-2 p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 rounded-xl">
                       <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                       <div>
                         <div className="font-bold text-foreground">{cb.branch.name}</div>
@@ -516,7 +516,7 @@ export default function VoucherDetailPage() {
                   </span>
                 </div>
                 {discountPct > 0 && (
-                  <span className="inline-block text-[10px] font-bold text-red-700 bg-red-50 rounded px-1.5 py-0.5 ring-1 ring-red-600/10 mt-1">
+                  <span className="inline-block text-[10px] font-bold text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-900/30 rounded px-1.5 py-0.5 ring-1 ring-red-600/10 dark:ring-red-900/50 mt-1">
                     Tiết kiệm {discountPct}% ({Math.round(Number(campaign.originalPrice) - Number(campaign.salePrice)).toLocaleString('vi-VN')} đ)
                   </span>
                 )}
@@ -563,18 +563,18 @@ export default function VoucherDetailPage() {
                       type="button"
                       disabled={purchaseQty <= 1}
                       onClick={() => setPurchaseQty(purchaseQty - 1)}
-                      className="h-8 w-8 rounded-lg border border-border flex items-center justify-center font-bold text-foreground hover:bg-slate-50 disabled:opacity-50"
+                      className="h-8 w-8 rounded-lg border border-border flex items-center justify-center font-bold text-foreground hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50"
                     >
                       -
                     </button>
-                    <span className="h-8 w-12 border border-border rounded-lg flex items-center justify-center text-xs font-bold text-foreground bg-slate-50/50">
+                    <span className="h-8 w-12 border border-border rounded-lg flex items-center justify-center text-xs font-bold text-foreground bg-slate-50/50 dark:bg-slate-800/50">
                       {purchaseQty}
                     </span>
                     <button
                       type="button"
                       disabled={purchaseQty >= maxAllowed}
                       onClick={() => setPurchaseQty(purchaseQty + 1)}
-                      className="h-8 w-8 rounded-lg border border-border flex items-center justify-center font-bold text-foreground hover:bg-slate-50 disabled:opacity-50"
+                      className="h-8 w-8 rounded-lg border border-border flex items-center justify-center font-bold text-foreground hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50"
                     >
                       +
                     </button>
@@ -588,8 +588,8 @@ export default function VoucherDetailPage() {
 
               {/* Đăng nhập nhắc nhở */}
               {!user && (
-                <div className="rounded-lg bg-yellow-50 p-3 border border-yellow-100 flex items-start gap-2 text-[10px] text-yellow-800">
-                  <Info className="h-4 w-4 text-yellow-600 shrink-0 mt-0.5" />
+                <div className="rounded-lg bg-yellow-50 dark:bg-yellow-900/20 p-3 border border-yellow-100 dark:border-yellow-900/50 flex items-start gap-2 text-[10px] text-yellow-800 dark:text-yellow-400">
+                  <Info className="h-4 w-4 text-yellow-600 dark:text-yellow-500 shrink-0 mt-0.5" />
                   <span>Bạn cần đăng nhập tài khoản Khách hàng để thực hiện giao dịch mua voucher.</span>
                 </div>
               )}

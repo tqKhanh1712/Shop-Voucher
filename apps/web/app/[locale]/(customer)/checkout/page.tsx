@@ -274,7 +274,7 @@ function CheckoutPageContent() {
             </div>
 
             {/* Hộp đếm ngược giữ chỗ */}
-            <div className="bg-secondary/40 border border-primary/20 rounded-xl p-4 flex flex-col items-center justify-center gap-1.5">
+            <div className="bg-secondary/40 dark:bg-secondary/20 border border-primary/20 rounded-xl p-4 flex flex-col items-center justify-center gap-1.5">
               <div className="flex items-center gap-1.5 text-xs text-primary font-bold">
                 <Clock className="h-4 w-4" />
                 <span>Thời gian giữ chỗ thanh toán</span>
@@ -300,7 +300,7 @@ function CheckoutPageContent() {
             </div>
 
             {errorMsg && (
-              <div className="text-xs text-red-600 bg-red-50 border border-red-100 rounded-lg p-3 text-left">
+              <div className="text-xs text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/30 border border-red-100 dark:border-red-900/50 rounded-lg p-3 text-left">
                 {errorMsg}
               </div>
             )}
@@ -316,7 +316,7 @@ function CheckoutPageContent() {
 
               <Link
                 href="/"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-border hover:bg-slate-50 text-foreground py-2.5 text-xs font-bold transition-colors"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-border hover:bg-slate-50 dark:hover:bg-slate-800 text-foreground py-2.5 text-xs font-bold transition-colors"
               >
                 Quay lại Trang chủ
               </Link>
@@ -340,8 +340,8 @@ function CheckoutPageContent() {
           </div>
 
           {errorMsg && (
-            <div className="bg-red-500/10 border border-red-500/20 text-red-800 text-sm p-4 rounded-xl flex items-center gap-3">
-              <ShieldAlert className="h-5 w-5 text-red-600 shrink-0" />
+            <div className="bg-red-500/10 border border-red-500/20 text-red-800 dark:text-red-400 text-sm p-4 rounded-xl flex items-center gap-3">
+              <ShieldAlert className="h-5 w-5 text-red-600 dark:text-red-500 shrink-0" />
               <span>{errorMsg}</span>
             </div>
           )}
@@ -485,7 +485,7 @@ function CheckoutPageContent() {
 
                   {/* MOMO */}
                   <label className={`flex flex-col items-center justify-center p-4 border rounded-xl cursor-pointer hover:border-pink-500/50 transition-all text-center h-full ${paymentProvider === 'MOMO'
-                    ? 'border-pink-500 bg-pink-50 text-pink-600 shadow-sm'
+                    ? 'border-pink-500 bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 shadow-sm'
                     : 'border-border bg-card text-foreground'
                     }`}>
                     <input
@@ -536,13 +536,13 @@ function CheckoutPageContent() {
                 </div>
 
                 <div className="space-y-3">
-                  <div className="rounded-lg bg-yellow-50 border border-yellow-100 p-3 flex gap-2 text-[10px] text-yellow-800">
-                    <Info className="h-4 w-4 text-yellow-600 shrink-0 mt-0.5" />
+                  <div className="rounded-lg bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-100 dark:border-yellow-900/50 p-3 flex gap-2 text-[10px] text-yellow-800 dark:text-yellow-400">
+                    <Info className="h-4 w-4 text-yellow-600 dark:text-yellow-500 shrink-0 mt-0.5" />
                     <span>Voucher sẽ được giữ cho bạn trong 15 phút.</span>
                   </div>
 
-                  <div className="rounded-lg bg-slate-50 border border-slate-200 p-3 text-[10px] text-slate-600">
-                    <h4 className="font-bold text-slate-700 mb-1 flex items-center gap-1.5">
+                  <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 p-3 text-[10px] text-slate-600 dark:text-slate-300">
+                    <h4 className="font-bold text-slate-700 dark:text-slate-200 mb-1 flex items-center gap-1.5">
                       <ShieldAlert className="h-3.5 w-3.5 text-primary" />
                       Chính sách Hủy / Hoàn tiền
                     </h4>

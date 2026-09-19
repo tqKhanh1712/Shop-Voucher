@@ -234,7 +234,7 @@ export default function Header({
         if (isOpen) setShowMobileSearch(false);
       }}
     >
-      <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+      <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-all">
         {/* Main Header Area */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between gap-4 lg:gap-8">
           {/* Logo */}
@@ -269,7 +269,7 @@ export default function Header({
                 onChange={(e) => handleKeywordChange(e.target.value)}
                 onFocus={() => setShowSuggestions(true)}
                 placeholder="Tìm voucher ẩm thực, làm đẹp, giải trí..."
-                className="w-full pl-4 pr-20 py-2.5 bg-slate-100 border-2 border-transparent focus:bg-white focus:border-primary/30 rounded-xl text-sm transition-all outline-none text-foreground placeholder:text-slate-400"
+                className="w-full pl-4 pr-20 py-2.5 bg-slate-100 dark:bg-slate-800 border-2 border-transparent focus:bg-white dark:focus:bg-slate-900 focus:border-primary/30 rounded-xl text-sm transition-all outline-none text-foreground placeholder:text-slate-400"
               />
               {keyword && (
                 <button
@@ -299,13 +299,13 @@ export default function Header({
 
             {/* Suggestions Dropdown */}
             {showSuggestions && visibleSuggestions.length > 0 && (
-              <div className="absolute top-full mt-2 w-full bg-white rounded-xl shadow-2xl border border-slate-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="absolute top-full mt-2 w-full bg-white dark:bg-slate-900 rounded-xl shadow-2xl border border-slate-100 dark:border-slate-800 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                 <ul>
                   {visibleSuggestions.map((s) => (
                     <li key={s.campaignId ?? s.title}>
                       <button
                         type="button"
-                        className="w-full text-left px-4 py-3 hover:bg-slate-50 transition-colors flex items-center gap-3 border-b border-slate-50 last:border-0"
+                        className="w-full text-left px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors flex items-center gap-3 border-b border-slate-50 dark:border-slate-800 last:border-0"
                         onClick={() => handleSuggestionClick(s.title)}
                       >
                         {(s.thumbnailUrl ?? s.thumbnail_url) ? (
@@ -316,12 +316,12 @@ export default function Header({
                             className="w-12 h-12 object-cover rounded-lg border border-slate-100 shrink-0 shadow-sm"
                           />
                         ) : (
-                          <div className="w-12 h-12 bg-slate-100 rounded-lg shrink-0 flex items-center justify-center border border-slate-200 shadow-sm">
+                          <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-lg shrink-0 flex items-center justify-center border border-slate-200 dark:border-slate-700 shadow-sm">
                             <Search className="h-5 w-5 text-slate-400" />
                           </div>
                         )}
                         <div className="flex flex-col flex-1 overflow-hidden">
-                          <span className="line-clamp-1 text-sm font-semibold text-slate-800">
+                          <span className="line-clamp-1 text-sm font-semibold text-slate-800 dark:text-slate-100">
                             {s.title}
                           </span>
                           {s.salePrice !== undefined && (
@@ -362,7 +362,7 @@ export default function Header({
               }
               aria-expanded={showMobileSearch}
               aria-controls="mobile-search-panel"
-              className="p-2 text-slate-600 hover:text-primary bg-slate-100 rounded-full"
+              className="p-2 text-slate-600 dark:text-slate-300 hover:text-primary bg-slate-100 dark:bg-slate-800 rounded-full"
             >
               {showMobileSearch ? (
                 <X className="h-5 w-5" />
@@ -375,7 +375,7 @@ export default function Header({
                 <button
                   type="button"
                   aria-label="Mở menu điều hướng"
-                  className="rounded-full bg-slate-100 p-2 text-slate-600 transition hover:text-primary"
+                  className="rounded-full bg-slate-100 dark:bg-slate-800 p-2 text-slate-600 dark:text-slate-300 transition hover:text-primary"
                 />
               }
             >
@@ -454,7 +454,7 @@ export default function Header({
                 )}
 
                 {/* Profile Dropdown (Simplified as hover group for MVP) */}
-                <div className="relative group ml-2 border-l border-slate-200 pl-4 flex items-center gap-2 cursor-pointer">
+                <div className="relative group ml-2 border-l border-slate-200 dark:border-slate-700 pl-4 flex items-center gap-2 cursor-pointer">
                   <div className="h-9 w-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold overflow-hidden">
                     {user.fullName ? (
                       user.fullName.charAt(0).toUpperCase()
@@ -463,27 +463,27 @@ export default function Header({
                     )}
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[10px] text-slate-500 font-medium">
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">
                       Tài khoản
                     </span>
-                    <span className="text-sm font-bold text-slate-800 line-clamp-1 max-w-[100px]">
+                    <span className="text-sm font-bold text-slate-800 dark:text-slate-100 line-clamp-1 max-w-[100px]">
                       {user.fullName || "User"}
                     </span>
                   </div>
 
                   {/* Dropdown Menu */}
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-right scale-95 group-hover:scale-100 z-50">
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-right scale-95 group-hover:scale-100 z-50">
                     <div className="p-2 space-y-1">
                       <Link
                         href="/profile"
-                        className="flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg transition-colors"
+                        className="flex items-center gap-2 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary rounded-lg transition-colors"
                       >
                         <UserIcon className="h-4 w-4" /> Thông tin hồ sơ
                       </Link>
-                      <div className="h-px bg-slate-100 my-1"></div>
+                      <div className="h-px bg-slate-100 dark:bg-slate-800 my-1"></div>
                       <button
                         onClick={logout}
-                        className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                        className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-lg transition-colors"
                       >
                         <LogOut className="h-4 w-4" /> Đăng xuất
                       </button>
@@ -510,7 +510,7 @@ export default function Header({
           </div>
         </div>
 
-        <div className="hidden border-t border-slate-100 md:block">
+        <div className="hidden border-t border-slate-100 dark:border-slate-800 md:block">
           <nav
             aria-label="Điều hướng giới thiệu"
             className="mx-auto flex min-h-10 w-full max-w-7xl items-center gap-6 px-4 text-xs font-bold text-slate-600 sm:px-6 lg:px-8"
@@ -542,7 +542,7 @@ export default function Header({
         {showMobileSearch && (
           <div
             id="mobile-search-panel"
-            className="border-t border-slate-100 bg-white px-4 py-4 md:hidden"
+            className="border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 md:hidden"
           >
             <div
               className="relative mx-auto w-full max-w-7xl"
@@ -574,13 +574,13 @@ export default function Header({
               </form>
 
               {showSuggestions && visibleSuggestions.length > 0 && (
-                <ul className="absolute top-full z-50 mt-2 w-full overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl">
+                <ul className="absolute top-full z-50 mt-2 w-full overflow-hidden rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl">
                   {visibleSuggestions.map((suggestion) => (
                     <li key={suggestion.title}>
                       <button
                         type="button"
                         onClick={() => handleSuggestionClick(suggestion.title)}
-                        className="flex w-full items-center gap-3 border-b border-slate-50 px-4 py-3 text-left text-sm text-slate-700 transition-colors last:border-0 hover:bg-slate-50"
+                        className="flex w-full items-center gap-3 border-b border-slate-50 dark:border-slate-800/50 px-4 py-3 text-left text-sm text-slate-700 dark:text-slate-300 transition-colors last:border-0 hover:bg-slate-50 dark:hover:bg-slate-800"
                       >
                         <Search
                           className="h-4 w-4 shrink-0 text-slate-400"

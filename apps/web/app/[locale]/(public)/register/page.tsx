@@ -115,7 +115,7 @@ export default function RegisterPage() {
         </div>
 
         {/* BỘ LỰA CHỌN VAI TRÒ */}
-        <div className="flex rounded-lg bg-slate-100 p-1 border border-border">
+        <div className="flex rounded-lg bg-slate-100 dark:bg-slate-800/50 p-1 border border-border">
           <button
             type="button"
             onClick={() => handleRoleChange('CUSTOMER')}
@@ -142,8 +142,8 @@ export default function RegisterPage() {
 
         {/* THÔNG BÁO LỖI NẾU CÓ */}
         {errorMsg && (
-          <div className="flex items-center gap-3 rounded-lg bg-red-500/10 p-4 border border-red-500/20 text-red-800 text-sm">
-            <AlertCircle className="h-5 w-5 shrink-0 text-red-600" />
+          <div className="flex items-center gap-3 rounded-lg bg-red-500/10 p-4 border border-red-500/20 text-red-800 dark:text-red-400 text-sm">
+            <AlertCircle className="h-5 w-5 shrink-0 text-red-600 dark:text-red-500" />
             <p className="font-medium">{errorMsg}</p>
           </div>
         )}
@@ -358,7 +358,7 @@ export default function RegisterPage() {
               Đăng nhập ngay
             </Link>
           </div>
-          <Link href="/" className="inline-flex items-center gap-1.5 text-slate-500 hover:text-primary font-medium transition-colors">
+          <Link href="/" className="inline-flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary font-medium transition-colors">
             <ArrowLeft className="h-4 w-4" />
             Trở về trang chủ
           </Link>
