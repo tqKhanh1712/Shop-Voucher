@@ -10,15 +10,15 @@ describe('catalog search query', () => {
     );
   });
 
-  it('searches multi-word keywords as a phrase or across primary fields', () => {
+  it('combines text search with semantic score if provided', () => {
     const query = buildCatalogSearchQuery({
-      keyword: 'Thời trang',
+      keyword: 'thoi trang adidas',
       validityStatus: 'ALL',
     });
 
-    expect(query.sql).toContain('b.search_text LIKE');
-    expect(query.sql).toContain('b.primary_search LIKE');
-    expect(query.values).toContain('%thoi trang%');
+    expect(query.sql).toContain('b.search_text ~*');
+    expect(query.sql).toContain('b.primary_search ~*');
+    expect(query.values).toContain('\\yadidas\\y');
   });
 
   it('keeps category facets independent from the selected category', () => {

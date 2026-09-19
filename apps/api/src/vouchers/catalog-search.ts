@@ -60,6 +60,33 @@ const SEARCH_SYNONYMS: Record<string, string[]> = {
   'du lich': ['khach san', 'resort', 've may bay', 'tour', 'hotel'],
 };
 
+const CATEGORY_INTENTS: Record<string, string[]> = {
+  'do-an': ['do an', 'thuc an', 'am thuc', 'nha hang'],
+  'do-uong': ['nuoc uong', 'do uong', 'giai khat', 'ca phe', 'tra sua'],
+  'giai-tri': ['giai tri', 'xem phim', 'rap chieu phim', 'vui choi'],
+  'mua-sam-thoi-trang': ['mua sam', 'thoi trang', 'sieu thi', 'quan ao'],
+  'suc-khoe-lam-dep': ['lam dep', 'spa', 'cham soc da', 'nha khoa', 'kham benh'],
+  'dich-vu-doi-song': ['di lai', 'du lich', 'khach san'],
+};
+
+function extractCategoryIntents(keyword: string): { remainingKeyword: string, implicitCategoryCodes: string[] } {
+  const implicitCategoryCodes = new Set<string>();
+  let remainingKeyword = keyword;
+
+  for (const [categoryCode, phrases] of Object.entries(CATEGORY_INTENTS)) {
+    for (const phrase of phrases) {
+      if (remainingKeyword.includes(phrase)) {
+        implicitCategoryCodes.add(categoryCode);
+        remainingKeyword = remainingKeyword.replace(new RegExp(`\\b${phrase}\\b`, 'g'), '').trim();
+      }
+    }
+  }
+
+  // Remove multiple spaces left after replacement
+  remainingKeyword = remainingKeyword.replace(/\s+/g, ' ').trim();
+  
+  return { remainingKeyword, implicitCategoryCodes: Array.from(implicitCategoryCodes) };
+}
 
 function expandSearchKeyword(keyword: string): string[] {
   const synonyms = new Set<string>();
@@ -134,7 +161,11 @@ export function buildCatalogSearchQuery(
   query: PublicCatalogQueryDto,
   keywordVector: number[] | null = null,
 ): Prisma.Sql {
-  const keyword = normalizeCatalogKeyword(query.keyword);
+  let keyword = normalizeCatalogKeyword(query.keyword);
+  
+  const { remainingKeyword, implicitCategoryCodes } = extractCategoryIntents(keyword);
+  keyword = remainingKeyword;
+
   const keywordTokens = keyword.split(' ').filter(Boolean);
   const synonyms = expandSearchKeyword(keyword);
   
@@ -148,7 +179,7 @@ export function buildCatalogSearchQuery(
   // Không dùng search_text (có cả description/điều khoản) để tránh false positive:
   // VD: TOUS les JOURS có chữ "trà" trong mô tả không có nghĩa nó là "đồ uống".
   const synonymSql = synonyms.length > 0 
-    ? Prisma.sql`OR (${Prisma.join(synonyms.map((syn) => Prisma.sql`b.primary_search LIKE ${`%${syn}%`}`), ' OR ')})`
+    ? Prisma.sql`OR (${Prisma.join(synonyms.map((syn) => Prisma.sql`b.primary_search ~* ${`\\y${syn}\\y`}`), ' OR ')})`
     : Prisma.empty;
 
   const vectorLiteral = keywordVector && keywordVector.length > 0
@@ -168,10 +199,10 @@ export function buildCatalogSearchQuery(
   const tokenFilter =
     keywordTokens.length > 1
       ? Prisma.sql`AND (
-          b.primary_search LIKE ${`%${keyword}%`}
+          b.primary_search ~* ${`\\y${keyword}\\y`}
           OR (${Prisma.join(
             keywordTokens.map(
-              (token) => Prisma.sql`b.primary_search LIKE ${`%${token}%`}`,
+              (token) => Prisma.sql`b.primary_search ~* ${`\\y${token}\\y`}`,
             ),
             ' AND ',
           )})
@@ -180,7 +211,7 @@ export function buildCatalogSearchQuery(
         )`
       : keywordTokens.length === 1
         ? Prisma.sql`AND (
-            b.primary_search LIKE ${`%${keyword}%`}
+            b.primary_search ~* ${`\\y${keyword}\\y`}
             ${synonymSql}
             ${semanticConditionSql}
           )`
@@ -200,30 +231,30 @@ export function buildCatalogSearchQuery(
             ${
               synonyms.length > 0
                 ? Prisma.sql`WHEN (${Prisma.join(
-                    synonyms.map((syn) => Prisma.sql`b.category_search LIKE ${`%${syn}%`}`),
+                    synonyms.map((syn) => Prisma.sql`b.category_search ~* ${`\\y${syn}\\y`}`),
                     ' OR '
                   )}) THEN 900`
                 : Prisma.empty
             }
             WHEN b.title_search LIKE ${`${keyword}%`} THEN 800
-            WHEN b.title_search LIKE ${`%${keyword}%`} THEN 600
+            WHEN b.title_search ~* ${`\\y${keyword}\\y`} THEN 600
             ${
               synonyms.length > 0
                 ? Prisma.sql`WHEN (${Prisma.join(
-                    synonyms.map((syn) => Prisma.sql`b.title_search LIKE ${`%${syn}%`}`),
+                    synonyms.map((syn) => Prisma.sql`b.title_search ~* ${`\\y${syn}\\y`}`),
                     ' OR '
                   )}) THEN 550`
                 : Prisma.empty
             }
-            WHEN b.category_search LIKE ${`%${keyword}%`} THEN 500
-            WHEN b.brand_search LIKE ${`%${keyword}%`} THEN 400
-            WHEN b.partner_search LIKE ${`%${keyword}%`} THEN 300
-            WHEN b.branch_search LIKE ${`%${keyword}%`} THEN 200
-            WHEN b.body_search LIKE ${`%${keyword}%`} THEN 100
+            WHEN b.category_search ~* ${`\\y${keyword}\\y`} THEN 500
+            WHEN b.brand_search ~* ${`\\y${keyword}\\y`} THEN 400
+            WHEN b.partner_search ~* ${`\\y${keyword}\\y`} THEN 300
+            WHEN b.branch_search ~* ${`\\y${keyword}\\y`} THEN 200
+            WHEN b.body_search ~* ${`\\y${keyword}\\y`} THEN 100
             ${
               synonyms.length > 0
                 ? Prisma.sql`WHEN (${Prisma.join(
-                    synonyms.map((syn) => Prisma.sql`b.search_text LIKE ${`%${syn}%`}`),
+                    synonyms.map((syn) => Prisma.sql`b.search_text ~* ${`\\y${syn}\\y`}`),
                     ' OR '
                   )}) THEN 50`
                 : Prisma.empty
@@ -232,9 +263,14 @@ export function buildCatalogSearchQuery(
           END) + (${semanticScoreSql})
         `
       : Prisma.sql`0`;
-  const selectedCategoryFilter = categoryCode
-    ? Prisma.sql`WHERE ${categoryCode} = ANY(c.facet_codes)`
-    : Prisma.empty;
+      
+  let selectedCategoryFilter = Prisma.empty;
+  if (categoryCode) {
+    selectedCategoryFilter = Prisma.sql`WHERE ${categoryCode} = ANY(c.facet_codes)`;
+  } else if (implicitCategoryCodes.length > 0) {
+    selectedCategoryFilter = Prisma.sql`WHERE c.facet_codes && ARRAY[${Prisma.join(implicitCategoryCodes)}]::varchar[]`;
+  }
+  
   const partnerFilter = query.partnerId
     ? Prisma.sql`AND vc.partner_id = ${query.partnerId}::uuid`
     : Prisma.empty;
