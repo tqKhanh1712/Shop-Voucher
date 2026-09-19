@@ -5,7 +5,6 @@ import { useParams, useRouter } from 'next/navigation';
 import { apiRequest } from '@/lib/api';
 import { getErrorMessage } from '@/lib/errors';
 import { useAuth } from '@/context/AuthContext';
-import { useAuth } from '@/context/AuthContext';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';

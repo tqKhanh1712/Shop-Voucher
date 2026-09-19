@@ -4,7 +4,6 @@ import React, { useState, Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import * as z from 'zod';
 import { useAuth } from '@/context/AuthContext';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -19,7 +18,6 @@ const loginSchema = z.object({
 
 type LoginSchemaType = z.infer<typeof loginSchema>;
 
-function LoginForm() {
 function LoginForm() {
   const t = useTranslations('auth');
   const { login, loading } = useAuth();
