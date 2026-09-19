@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { Link, useRouter, usePathname } from "@/i18n/routing";
 import { useAuth } from "../context/AuthContext";
 import { apiRequest } from "../lib/api";
 import { ThemeToggle } from "./ThemeToggle";

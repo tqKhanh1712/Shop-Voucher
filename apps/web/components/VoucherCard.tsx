@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import Link from "next/link";
+import { Link, useRouter } from "@/i18n/routing";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import {
   MapPin,
   Store,
