@@ -1,0 +1,818 @@
+[
+  {
+    "id": "755fd69e-f351-4619-b736-fb26676e7150",
+    "title": "L-Chicken Burger",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "99bed4ca-0753-4870-b1e3-9abfbab60338",
+    "title": "Cheese Burger Set",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "9b627307-4502-4ab1-a115-dcfd1fe2a12b",
+    "title": "Combo Beef Spaghetti",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "adb2f0eb-fab3-4794-b463-43783ad8ce6b",
+    "title": "Phiếu quà tặng Cộng Cà Phê 200k",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá, Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé! Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạc ..."
+  },
+  {
+    "id": "aac79116-7415-49d8-b063-ba3db3318fd7",
+    "title": "Voucher Buffet Lẩu 199k tại ABC",
+    "category": "Food & Beverage",
+    "desc": "Áp dụng cho toàn bộ thực đơn lẩu buffet tối từ Thứ 2 đến Thứ 6...."
+  },
+  {
+    "id": "66faf886-4df3-4571-8b07-9f290a0b29f3",
+    "title": "Phiếu quà tặng Dottie 50k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Thành lập vào năm 2013, chúng tôi tự hào là một trong những thương hiệu thời trang thiết kế đầu tiên của người Việt trẻ. Khởi đầu với mong muốn được m..."
+  },
+  {
+    "id": "66b0aa41-a8bb-42c7-b207-46edaf1207d2",
+    "title": "Phiếu quà tặng Bác Tôm 500k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "\"Hôm nay ăn gì?\" tuy là câu hỏi không khó nhưng chắc hẳn đã làm đau đầu không ít các bà nội trợ trong các bữa cơm hàng ngày, vì phải đứng trước thị tr..."
+  },
+  {
+    "id": "64d21c85-2d1b-48e9-8524-e8db15382bbb",
+    "title": "Phiếu quà tặng Bác Tôm 200k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "\"Hôm nay ăn gì?\" tuy là câu hỏi không khó nhưng chắc hẳn đã làm đau đầu không ít các bà nội trợ trong các bữa cơm hàng ngày, vì phải đứng trước thị tr..."
+  },
+  {
+    "id": "e5954c11-dff9-40e6-9d7a-72a4950388cf",
+    "title": "Phiếu quà tặng Bác Tôm 100k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "\"Hôm nay ăn gì?\" tuy là câu hỏi không khó nhưng chắc hẳn đã làm đau đầu không ít các bà nội trợ trong các bữa cơm hàng ngày, vì phải đứng trước thị tr..."
+  },
+  {
+    "id": "45cd1095-5535-4089-bce1-acfdcfc5ab34",
+    "title": "Pizza 4P's 500k (Dành Cho 2 Người)",
+    "category": "FOOD_DRINK",
+    "desc": "4P's có nghĩa \"For Peace\" - cho Hòa Bình tràn ngập trên toàn thế giới.\r Tham vọng ở Pizza 4P's không chỉ đơn giản là \"Một nhà hàng Pizza tuyệt vời\" mà..."
+  },
+  {
+    "id": "94f195b7-2da1-470d-90b9-c265301629f3",
+    "title": "Phiếu quà tặng Y Tế H Plus 500.000 VNĐ",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Ưu đãi đặc biệt dành cho Quý khách hàng!\r Khi đến thăm khám tại phòng khám đa khoa Hplus, Quý khách sử dụng voucher tiền mặt cho các dịch vụ khám chữa..."
+  },
+  {
+    "id": "f1aacc6b-825b-46f3-9020-778243b25f05",
+    "title": "Phiếu quà tặng Cộng Cà Phê 50k",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá,\r Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé!\r Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạ..."
+  },
+  {
+    "id": "8236828d-1516-4057-a09f-f29983dd9cb5",
+    "title": "Phiếu Quà Tặng Life4cuts",
+    "category": "ENTERTAINMENT",
+    "desc": "Life4cuts Vietnam (Life Four Cuts Vietnam) là chi nhánh chính thức của Life4cuts Hàn Quốc, nhãn hàng chụp hình tự động lấy liền nổi tiếng nhất Hàn Quố..."
+  },
+  {
+    "id": "4bf02f2e-52c7-4faa-9c63-e10d04c38c2d",
+    "title": "Voucher Nước uống giảm giá 50%",
+    "category": "Food & Beverage",
+    "desc": "Giảm trực tiếp 50% cho tất cả thức uống trà sữa và cà phê...."
+  },
+  {
+    "id": "c24ad65c-5e9a-4fa0-a8c0-cac2c24398a0",
+    "title": "Voucher Mua sắm Thời trang XYZ 100k",
+    "category": "Shopping",
+    "desc": "Áp dụng cho hóa đơn mua sắm quần áo thời trang bất kỳ từ 300k...."
+  },
+  {
+    "id": "f1a20fb4-cc22-44b6-a09a-42c7093741a5",
+    "title": "Combo 2 Phiếu Quà Tặng Life4cuts (70k x 2) (Bản sao 1)",
+    "category": "ENTERTAINMENT",
+    "desc": "Life4cuts Vietnam (Life Four Cuts Vietnam) là chi nhánh chính thức của Life4cuts Hàn Quốc, nhãn hàng chụp hình tự động lấy liền nổi tiếng nhất Hàn Quố..."
+  },
+  {
+    "id": "f17141c6-d441-4407-a3ac-6615a53bc6d2",
+    "title": "[Giftpop] Phiếu quà tặng TOUS les JOURS 500K (Bản sao 2)",
+    "category": "FOOD_DRINK",
+    "desc": "Với sự ra đời của cửa hàng đầu tiên tại Việt Nam vào năm 2007, chuỗi cửa hàng TOUS les JOURS khẳng định vị trí dẫn đầu trong phân khúc cao cấp bánh và..."
+  },
+  {
+    "id": "1fd9ba3b-ee14-46ca-a86f-f77174089546",
+    "title": "[Giftpop] Phiếu quà tặng TOUS les JOURS 100K",
+    "category": "FOOD_DRINK",
+    "desc": "Với sự ra đời của cửa hàng đầu tiên tại Việt Nam vào năm 2007, chuỗi cửa hàng TOUS les JOURS khẳng định vị trí dẫn đầu trong phân khúc cao cấp bánh và..."
+  },
+  {
+    "id": "66ab9f6d-0497-4051-8487-419305ec28b9",
+    "title": "Voucher Mua sắm EXPIRED",
+    "category": "Shopping",
+    "desc": "Chiến dịch đã kết thúc bán tuần trước...."
+  },
+  {
+    "id": "d85e6b35-dd63-4f44-97e6-b06afdbc22df",
+    "title": "Phiếu quà tặng Westway Dental 200k",
+    "category": "BEAUTY_HEALTH",
+    "desc": "VIỆN NHA KHOA QUỐC TẾ WESTWAY - CHUỖI NHA KHOA CAO CẤP CHUẨN 5 SAO - GIÁ CỦA MỌI NHÀ\r Viện Nha Khoa Quốc Tế Westway là một trong những chuỗi nha khoa ..."
+  },
+  {
+    "id": "f1d533d2-1128-45b7-96e0-e970bc092107",
+    "title": "Cộng Cà Phê 100k (Dành Cho 2 Người)",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá,\r Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé!\r Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạ..."
+  },
+  {
+    "id": "6c0e5afb-42d0-4e7c-b6a9-8ed2e93fd9a2",
+    "title": "Burger Set (Bản sao 2)",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "d0d423a8-5263-447c-883a-305da5776cd9",
+    "title": "Phiếu quà tặng Extrim 200k",
+    "category": "LIFESTYLE_SERVICES",
+    "desc": "EXTRIM - VỆ SINH SỬA CHỮA GIÀY TÚI TOÀN DIỆN\r Với hơn 7 năm kinh nghiệm, Extrim tự hào là một trong những nơi chăm sóc giày uy tín và tốt nhất Thành P..."
+  },
+  {
+    "id": "56fc4d2e-0996-439f-9b9f-658210a532e6",
+    "title": "Combo Cuối Tuần: Pizza 4P's 500k",
+    "category": "FOOD_DRINK",
+    "desc": "4P's có nghĩa \"For Peace\" - cho Hòa Bình tràn ngập trên toàn thế giới.\r Tham vọng ở Pizza 4P's không chỉ đơn giản là \"Một nhà hàng Pizza tuyệt vời\" mà..."
+  },
+  {
+    "id": "df2dd768-8758-44fc-83f3-766a01dcb35a",
+    "title": "L-Chicken Burger - Khuyến Mãi Khai Trương",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "7039ac5f-e662-4998-9948-c2f3c6f9d9fb",
+    "title": "Gói VIP - Cheese Burger Set",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "fa06877c-9f20-4f31-aa3d-c30f550972ee",
+    "title": "Phiếu quà tặng Go2Joy 100k",
+    "category": "LIFESTYLE_SERVICES",
+    "desc": "Với Go2Joy, thế giới nghỉ ngơi và du lịch trở nên thật nhỏ bé, gọn trong lòng bàn tay bạn. Đây là người bạn đồng hành lý tưởng mỗi khi bạn cần tìm một..."
+  },
+  {
+    "id": "d5aebd84-1778-471c-9efa-88c8050d91a6",
+    "title": "Flash Sale: Pizza 4P's 100k",
+    "category": "FOOD_DRINK",
+    "desc": "4P's có nghĩa \"For Peace\" - cho Hòa Bình tràn ngập trên toàn thế giới.\r Tham vọng ở Pizza 4P's không chỉ đơn giản là \"Một nhà hàng Pizza tuyệt vời\" mà..."
+  },
+  {
+    "id": "6af68428-6e5b-4333-8128-f09fb822bf01",
+    "title": "[Giftpop] Phiếu quà tặng TOUS les JOURS 500K",
+    "category": "FOOD_DRINK",
+    "desc": "Với sự ra đời của cửa hàng đầu tiên tại Việt Nam vào năm 2007, chuỗi cửa hàng TOUS les JOURS khẳng định vị trí dẫn đầu trong phân khúc cao cấp bánh và..."
+  },
+  {
+    "id": "22f33839-7184-4a7f-8f94-c320babaac33",
+    "title": "Phiếu quà tặng Dottie 200k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Thành lập vào năm 2013, chúng tôi tự hào là một trong những thương hiệu thời trang thiết kế đầu tiên của người Việt trẻ. Khởi đầu với mong muốn được m..."
+  },
+  {
+    "id": "9228ecd1-8edc-4f51-ad29-e485b5853d95",
+    "title": "Voucher Giờ Vàng: Trị Liệu Trẻ Em (60 phút)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Chào mừng bạn đến với Coco Spa - cửa hàng Spa cao cấp tại quận 1, nơi cung cấp những trải nghiệm thư giãn tuyệt vời và phụ hồi sức khỏe toàn diện. Từ ..."
+  },
+  {
+    "id": "666c41b2-99ea-4b7f-982a-6b879d7f7b22",
+    "title": "Thẻ Quà Tặng Đặc Biệt: Burger Set",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "b4025165-038a-4d4f-bc9b-32eddd863594",
+    "title": "Voucher Giờ Vàng: Dottie 1000k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Thành lập vào năm 2013, chúng tôi tự hào là một trong những thương hiệu thời trang thiết kế đầu tiên của người Việt trẻ. Khởi đầu với mong muốn được m..."
+  },
+  {
+    "id": "910fab4e-20f7-4ca8-9a03-e2abe3bbe25a",
+    "title": "Bác Tôm 200k - Khuyến Mãi Khai Trương",
+    "category": "SHOPPING_RETAIL",
+    "desc": "\"Hôm nay ăn gì?\" tuy là câu hỏi không khó nhưng chắc hẳn đã làm đau đầu không ít các bà nội trợ trong các bữa cơm hàng ngày, vì phải đứng trước thị tr..."
+  },
+  {
+    "id": "94b360dd-645e-4697-9d22-13f906500834",
+    "title": "Phiếu quà tặng Pizza 4P's 500k (Bản sao 1)",
+    "category": "FOOD_DRINK",
+    "desc": "4P's có nghĩa \"For Peace\" - cho Hòa Bình tràn ngập trên toàn thế giới.\r Tham vọng ở Pizza 4P's không chỉ đơn giản là \"Một nhà hàng Pizza tuyệt vời\" mà..."
+  },
+  {
+    "id": "71fc3ecf-f411-4832-95ce-0993c3715b4a",
+    "title": "Phiếu Quà Tặng Nha Khoa Smile Beauty 100K (Bản sao 1)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Mang trong mình niềm tin về sứ mệnh đánh thức vẻ đẹp tiềm ẩn trong mỗi người qua những nụ cười trắng sáng đều đẹp, hệ thống nha khoa hàng đầu Việt Nam..."
+  },
+  {
+    "id": "09993ac8-1ad5-4bda-a8b4-417ac614b371",
+    "title": "K-Market 500k (Dành Cho 2 Người)",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Phiếu quà tặng K-Market với nhiều mệnh giá sẽ là giải pháp hoàn hảo cho doanh nghiệp dùng tặng hoặc thưởng cho nhân viên, cũng sẽ là món quà ý nghĩa v..."
+  },
+  {
+    "id": "71fb437a-9038-40dc-924c-60408b2b81f4",
+    "title": "Phiếu quà tặng Pizza 4P's 500k",
+    "category": "FOOD_DRINK",
+    "desc": "4P's có nghĩa \"For Peace\" - cho Hòa Bình tràn ngập trên toàn thế giới.\r Tham vọng ở Pizza 4P's không chỉ đơn giản là \"Một nhà hàng Pizza tuyệt vời\" mà..."
+  },
+  {
+    "id": "9592808a-ce21-444d-b592-78b818dc56e1",
+    "title": "[Giftpop] Phiếu quà tặng TOUS les JOURS 500K (Bản sao 1)",
+    "category": "FOOD_DRINK",
+    "desc": "Với sự ra đời của cửa hàng đầu tiên tại Việt Nam vào năm 2007, chuỗi cửa hàng TOUS les JOURS khẳng định vị trí dẫn đầu trong phân khúc cao cấp bánh và..."
+  },
+  {
+    "id": "2917a34b-905d-41f5-b06f-275e2032823a",
+    "title": "Combo Cuối Tuần: Y Tế H Plus 1.000.000 VNĐ",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Ưu đãi đặc biệt dành cho Quý khách hàng\r Khi đến thăm khám tại phòng khám đa khoa Hplus, Quý khách sử dụng voucher tiền mặt cho các dịch vụ khám chữa ..."
+  },
+  {
+    "id": "df3c6f60-0bf0-4037-9729-2362b8cf7fa7",
+    "title": "Gói VIP - Pizza 4P's 100k",
+    "category": "FOOD_DRINK",
+    "desc": "4P's có nghĩa \"For Peace\" - cho Hòa Bình tràn ngập trên toàn thế giới.\r Tham vọng ở Pizza 4P's không chỉ đơn giản là \"Một nhà hàng Pizza tuyệt vời\" mà..."
+  },
+  {
+    "id": "3e828888-41e7-41a1-bbaf-f1fec0865e10",
+    "title": "Phiếu Quà Tặng Mala Panda 500.000 VND",
+    "category": "FOOD_DRINK",
+    "desc": "Mala Panda là chuỗi nhà hàng chuyên về ẩm thực Tứ Xuyên, nổi bật với món lẩu Malatang tự chọn và các món xào theo phong cách \"gắp & cân\". Nhà hàng man..."
+  },
+  {
+    "id": "13d3df39-ed90-472d-8625-53a974392e2c",
+    "title": "Life4cuts - Khuyến Mãi Khai Trương",
+    "category": "ENTERTAINMENT",
+    "desc": "Life4cuts Vietnam (Life Four Cuts Vietnam) là chi nhánh chính thức của Life4cuts Hàn Quốc, nhãn hàng chụp hình tự động lấy liền nổi tiếng nhất Hàn Quố..."
+  },
+  {
+    "id": "4301dd60-7597-4dd6-b21a-601dab3f2262",
+    "title": "Cộng Cà Phê 100k (Tặng Kèm Nước)",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá,\r Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé!\r Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạ..."
+  },
+  {
+    "id": "8433630c-9504-4e76-af31-44d9be9364ed",
+    "title": "[Giftpop] Phiếu Quà Tặng Khu Vui Chơi Công Viên Văn Hoá Suối Tiên 500K",
+    "category": "ENTERTAINMENT",
+    "desc": "Công Viên Văn Hóa Suối Tiên với đa dạng các công trình kiến trúc mang đậm nét văn hóa, lịch sử dân tộc cùng trò chơi hấp dẫn, mới lạ với 7 điểm chính ..."
+  },
+  {
+    "id": "f000f48f-80e0-4714-92c2-52bbecd6163b",
+    "title": "Combo Cuối Tuần: Combo 2 Phiếu Quà Tặng Life4cuts (70k x 2)",
+    "category": "ENTERTAINMENT",
+    "desc": "Life4cuts Vietnam (Life Four Cuts Vietnam) là chi nhánh chính thức của Life4cuts Hàn Quốc, nhãn hàng chụp hình tự động lấy liền nổi tiếng nhất Hàn Quố..."
+  },
+  {
+    "id": "a5125425-15e1-44a2-8767-668d7a99c02d",
+    "title": "L-Chicken Burger (Bản sao 1)",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "408207ed-cfd7-4599-8d1c-2ebdf2e26040",
+    "title": "Combo Beef Spaghetti (Bản sao 1)",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "b7aa44d5-e06f-4bb5-b9f6-d9ade9b1f7b4",
+    "title": "Voucher Giờ Vàng: Hoa Yêu Thương 100K",
+    "category": "LIFESTYLE_SERVICES",
+    "desc": "Hoa Yêu Thương là bông hoa được ghép từ nhiều trái tim với mong muốn kêu gọi mọi người hãy chia sẻ yêu thương nhiều hơn. Cuộc sống sẽ tốt hơn rất nhiề..."
+  },
+  {
+    "id": "ffd421d2-e63c-41c2-a7ec-10edc73e6a9f",
+    "title": "Phiếu quà tặng Bác Tôm 500k (Bản sao 1)",
+    "category": "SHOPPING_RETAIL",
+    "desc": "\"Hôm nay ăn gì?\" tuy là câu hỏi không khó nhưng chắc hẳn đã làm đau đầu không ít các bà nội trợ trong các bữa cơm hàng ngày, vì phải đứng trước thị tr..."
+  },
+  {
+    "id": "564aec7f-63a1-4a2f-936e-c7122ac129af",
+    "title": "Phiếu quà tặng Bác Tôm 200k (Bản sao 1)",
+    "category": "SHOPPING_RETAIL",
+    "desc": "\"Hôm nay ăn gì?\" tuy là câu hỏi không khó nhưng chắc hẳn đã làm đau đầu không ít các bà nội trợ trong các bữa cơm hàng ngày, vì phải đứng trước thị tr..."
+  },
+  {
+    "id": "f1c34d83-4063-470d-a686-151a0b3f6988",
+    "title": "Phiếu quà tặng Bác Tôm 100k (Bản sao 1)",
+    "category": "SHOPPING_RETAIL",
+    "desc": "\"Hôm nay ăn gì?\" tuy là câu hỏi không khó nhưng chắc hẳn đã làm đau đầu không ít các bà nội trợ trong các bữa cơm hàng ngày, vì phải đứng trước thị tr..."
+  },
+  {
+    "id": "4dc0166f-2977-4f28-9619-4efd46bd92e0",
+    "title": "Combo Cuối Tuần: Bác Tôm 500k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "\"Hôm nay ăn gì?\" tuy là câu hỏi không khó nhưng chắc hẳn đã làm đau đầu không ít các bà nội trợ trong các bữa cơm hàng ngày, vì phải đứng trước thị tr..."
+  },
+  {
+    "id": "ad3a0ea1-2cae-4172-bdf1-df1a4bd9819d",
+    "title": "Phiếu quà tặng Dottie 1000k (Bản sao 1)",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Thành lập vào năm 2013, chúng tôi tự hào là một trong những thương hiệu thời trang thiết kế đầu tiên của người Việt trẻ. Khởi đầu với mong muốn được m..."
+  },
+  {
+    "id": "1e39281b-14c4-45a1-8bf1-6f43df0b7640",
+    "title": "Phiếu quà tặng K-Market 100k (Bản sao 1)",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Phiếu quà tặng K-Market với nhiều mệnh giá sẽ là giải pháp hoàn hảo cho doanh nghiệp dùng tặng hoặc thưởng cho nhân viên, cũng sẽ là món quà ý nghĩa v..."
+  },
+  {
+    "id": "fb59cc10-92c8-42c4-8d1c-cc81f64233a7",
+    "title": "Phiếu Quà Tặng Trị Liệu Chân (90 phút) (Bản sao 1)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Chào mừng bạn đến với Coco Spa - cửa hàng Spa cao cấp tại quận 1, nơi cung cấp những trải nghiệm thư giãn tuyệt vời và phụ hồi sức khỏe toàn diện. Từ ..."
+  },
+  {
+    "id": "96f78100-ba92-4005-a63e-e67fd3b5d3bf",
+    "title": "Phiếu quà tặng Y Tế H Plus 1.000.000 VNĐ (Bản sao 1)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Ưu đãi đặc biệt dành cho Quý khách hàng\r Khi đến thăm khám tại phòng khám đa khoa Hplus, Quý khách sử dụng voucher tiền mặt cho các dịch vụ khám chữa ..."
+  },
+  {
+    "id": "563af962-42f6-4ac6-a2fc-e391b0a0859a",
+    "title": "Phiếu quà tặng Westway Dental 200k (Bản sao 1)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "VIỆN NHA KHOA QUỐC TẾ WESTWAY - CHUỖI NHA KHOA CAO CẤP CHUẨN 5 SAO - GIÁ CỦA MỌI NHÀ\r Viện Nha Khoa Quốc Tế Westway là một trong những chuỗi nha khoa ..."
+  },
+  {
+    "id": "0f77729b-5011-4c37-990d-266bc259691b",
+    "title": "Vé xem phim 2D CGV các ngày trong tuần (thứ 2 ~ CN) (Bản sao 1)",
+    "category": "ENTERTAINMENT",
+    "desc": "Tin vui cho các fan phim ảnh, nhất là fan của cụm rạp CGV. Các bạn sẽ được tận hưởng những giây phút thoải mái nhất với những bộ phim mới nhất cùng mộ..."
+  },
+  {
+    "id": "d2dc6711-7a5d-4e5c-8074-069406bfb160",
+    "title": "Phiếu Quà Tặng Mala Panda 1.000.000 VND",
+    "category": "FOOD_DRINK",
+    "desc": "Mala Panda là chuỗi nhà hàng chuyên về ẩm thực Tứ Xuyên, nổi bật với món lẩu Malatang tự chọn và các món xào theo phong cách \"gắp & cân\". Nhà hàng man..."
+  },
+  {
+    "id": "821490eb-0043-4c93-ac66-bfde5ccfc138",
+    "title": "Phiếu Quà Tặng Life4cuts (Bản sao 1)",
+    "category": "ENTERTAINMENT",
+    "desc": "Life4cuts Vietnam (Life Four Cuts Vietnam) là chi nhánh chính thức của Life4cuts Hàn Quốc, nhãn hàng chụp hình tự động lấy liền nổi tiếng nhất Hàn Quố..."
+  },
+  {
+    "id": "d63d4e72-6806-45ec-8549-6446f5d8c407",
+    "title": "Phiếu quà tặng Hoa Yêu Thương 100K (Bản sao 1)",
+    "category": "LIFESTYLE_SERVICES",
+    "desc": "Hoa Yêu Thương là bông hoa được ghép từ nhiều trái tim với mong muốn kêu gọi mọi người hãy chia sẻ yêu thương nhiều hơn. Cuộc sống sẽ tốt hơn rất nhiề..."
+  },
+  {
+    "id": "b28aab94-3f1b-4806-9233-7f0b4360a35d",
+    "title": "Phiếu quà tặng Cộng Cà Phê 100k (Bản sao 2)",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá,\r Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé!\r Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạ..."
+  },
+  {
+    "id": "79330b4d-0a75-421f-8ae6-853d26452461",
+    "title": "Combo Beef Spaghetti (Bản sao 2)",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "a82921dd-ccb7-4f6c-a0e2-53aaa4be74ee",
+    "title": "Combo Cuối Tuần: [Giftpop] Phiếu quà tặng TOUS les JOURS 100K",
+    "category": "FOOD_DRINK",
+    "desc": "Với sự ra đời của cửa hàng đầu tiên tại Việt Nam vào năm 2007, chuỗi cửa hàng TOUS les JOURS khẳng định vị trí dẫn đầu trong phân khúc cao cấp bánh và..."
+  },
+  {
+    "id": "52eebf7d-13a9-4ccf-86be-5797d653eb63",
+    "title": "L-Chicken Burger (Bản sao 2)",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "9e881e43-a600-4626-9241-02d0f91eb616",
+    "title": "Burger Set (Bản sao 1)",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "4c1100e0-4188-4d49-9b33-38547d961954",
+    "title": "Flash Sale: Burger Set",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "80372851-149d-4cf8-8636-40dad34d51b0",
+    "title": "Phiếu quà tặng Pizza 4P's 100k",
+    "category": "FOOD_DRINK",
+    "desc": "4P's có nghĩa \"For Peace\" - cho Hòa Bình tràn ngập trên toàn thế giới.\r Tham vọng ở Pizza 4P's không chỉ đơn giản là \"Một nhà hàng Pizza tuyệt vời\" mà..."
+  },
+  {
+    "id": "2908fbcf-5834-4d95-9031-30b6f050acef",
+    "title": "Voucher Giờ Vàng: Cheese Burger Set",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "631a75f6-7da6-4e8c-895b-48a678ff37af",
+    "title": "(Dookki x Life4Cuts) Combo Ăn Ngon – Chụp Xinh",
+    "category": "FOOD_DRINK",
+    "desc": "Yummy & Pretty Pics: Combo Ăn ngon – Chụp xinh, trọn gói cho 2 người Bạn đang tìm một trải nghiệm vừa ăn uống thoải mái vừa có ảnh đẹp mang về? Combo ..."
+  },
+  {
+    "id": "235261ab-7a6a-4ea3-b8fe-2b01d54b70f0",
+    "title": "Phiếu quà tặng Dottie 1000k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Thành lập vào năm 2013, chúng tôi tự hào là một trong những thương hiệu thời trang thiết kế đầu tiên của người Việt trẻ. Khởi đầu với mong muốn được m..."
+  },
+  {
+    "id": "8161f6d1-8606-4005-ac17-68ea2a4940bb",
+    "title": "Phiếu quà tặng K-Market 100k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Phiếu quà tặng K-Market với nhiều mệnh giá sẽ là giải pháp hoàn hảo cho doanh nghiệp dùng tặng hoặc thưởng cho nhân viên, cũng sẽ là món quà ý nghĩa v..."
+  },
+  {
+    "id": "f2296289-36fc-48f7-92a3-351d63f5c516",
+    "title": "Tẩy Trắng Răng Laser Whitening Từ Đức (Bản sao 1)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Mang trong mình niềm tin về sứ mệnh đánh thức vẻ đẹp tiềm ẩn trong mỗi người qua những nụ cười trắng sáng đều đẹp, hệ thống nha khoa hàng đầu Việt Nam..."
+  },
+  {
+    "id": "981a0c09-1274-40ae-b5f7-baec60be5bcd",
+    "title": "Tẩy Trắng Răng Laser Whitening Từ Đức",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Mang trong mình niềm tin về sứ mệnh đánh thức vẻ đẹp tiềm ẩn trong mỗi người qua những nụ cười trắng sáng đều đẹp, hệ thống nha khoa hàng đầu Việt Nam..."
+  },
+  {
+    "id": "0302a8a0-4920-455a-a6f2-d218e88c32fd",
+    "title": "Combo 2 Vé xem phim 2D CGV các ngày trong tuần (thứ 2 ~ CN)",
+    "category": "ENTERTAINMENT",
+    "desc": "Combo 2 Vé xem phim 2D CGV các ngày trong tuần (thứ 2 ~ CN)\r Tin vui cho các fan phim ảnh, nhất là fan của cụm rạp CGV. Các bạn sẽ được tận hưởng nhữn..."
+  },
+  {
+    "id": "6950ce3f-8256-41d9-b1dc-22fee4067e01",
+    "title": "Phiếu quà tặng Y Tế H Plus 1.000.000 VNĐ",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Ưu đãi đặc biệt dành cho Quý khách hàng\r Khi đến thăm khám tại phòng khám đa khoa Hplus, Quý khách sử dụng voucher tiền mặt cho các dịch vụ khám chữa ..."
+  },
+  {
+    "id": "4d831f7e-3f2e-4644-ab86-032bfdcf0b5b",
+    "title": "Voucher Trà sữa ABC mới (DRAFT)",
+    "category": "Food & Beverage",
+    "desc": "Chiến dịch nháp chưa công bố...."
+  },
+  {
+    "id": "b65769b0-e0be-4b59-abf2-73bb67a7a2a2",
+    "title": "Voucher Mua sắm SOLD OUT",
+    "category": "Shopping",
+    "desc": "Chiến dịch giới hạn đặc biệt đã bán hết...."
+  },
+  {
+    "id": "bc078485-f10a-482b-9bc1-1dac4892651f",
+    "title": "[Giftpop] Phiếu quà tặng TOUS les JOURS 500K (Tặng Kèm Nước)",
+    "category": "FOOD_DRINK",
+    "desc": "Với sự ra đời của cửa hàng đầu tiên tại Việt Nam vào năm 2007, chuỗi cửa hàng TOUS les JOURS khẳng định vị trí dẫn đầu trong phân khúc cao cấp bánh và..."
+  },
+  {
+    "id": "d079f94d-80a9-4bb8-8225-42f17d65f79d",
+    "title": "Vé xem phim 2D CGV các ngày trong tuần (thứ 2 ~ CN)",
+    "category": "ENTERTAINMENT",
+    "desc": "Tin vui cho các fan phim ảnh, nhất là fan của cụm rạp CGV. Các bạn sẽ được tận hưởng những giây phút thoải mái nhất với những bộ phim mới nhất cùng mộ..."
+  },
+  {
+    "id": "42c0da3d-01d3-4d1e-8e61-df04bb5698c0",
+    "title": "Combo 2 Phiếu Quà Tặng Life4cuts (70k x 2)",
+    "category": "ENTERTAINMENT",
+    "desc": "Life4cuts Vietnam (Life Four Cuts Vietnam) là chi nhánh chính thức của Life4cuts Hàn Quốc, nhãn hàng chụp hình tự động lấy liền nổi tiếng nhất Hàn Quố..."
+  },
+  {
+    "id": "bdec8a42-48e5-46d6-b285-279092e8b62e",
+    "title": "Y Tế H Plus 500.000 VNĐ - Khuyến Mãi Khai Trương",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Ưu đãi đặc biệt dành cho Quý khách hàng!\r Khi đến thăm khám tại phòng khám đa khoa Hplus, Quý khách sử dụng voucher tiền mặt cho các dịch vụ khám chữa..."
+  },
+  {
+    "id": "f821f299-7d84-45cb-98fd-bec2737c3fa4",
+    "title": "Gói VIP - Nha Khoa Smile Beauty 100K",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Mang trong mình niềm tin về sứ mệnh đánh thức vẻ đẹp tiềm ẩn trong mỗi người qua những nụ cười trắng sáng đều đẹp, hệ thống nha khoa hàng đầu Việt Nam..."
+  },
+  {
+    "id": "932cb322-09fd-4dda-9ab9-7d84e154cfd2",
+    "title": "Voucher Giờ Vàng: Combo 2 Vé xem phim 2D CGV các ngày trong tuần (thứ 2 ~ CN)",
+    "category": "ENTERTAINMENT",
+    "desc": "Combo 2 Vé xem phim 2D CGV các ngày trong tuần (thứ 2 ~ CN)\r Tin vui cho các fan phim ảnh, nhất là fan của cụm rạp CGV. Các bạn sẽ được tận hưởng nhữn..."
+  },
+  {
+    "id": "a5acdab5-ea45-433c-8a4a-a050194a5c11",
+    "title": "Flash Sale: Vé xem phim 2D tất cả các ngày trong tuần",
+    "category": "ENTERTAINMENT",
+    "desc": "Mùa phim “bom tấn” đang đến gần, liệu có tiếc chăng vì giá mà bạn bỏ qua những bộ phim “đỉnh” của năm. Đừng manh động, vì Giftpop đã có chính sách về ..."
+  },
+  {
+    "id": "ac171dac-32e2-4018-9f5b-8063b36275cd",
+    "title": "Gói VIP - [Giftpop] Phiếu Quà Tặng Khu Vui Chơi Công Viên Văn Hoá Suối Tiên 500K",
+    "category": "ENTERTAINMENT",
+    "desc": "Công Viên Văn Hóa Suối Tiên với đa dạng các công trình kiến trúc mang đậm nét văn hóa, lịch sử dân tộc cùng trò chơi hấp dẫn, mới lạ với 7 điểm chính ..."
+  },
+  {
+    "id": "ee2323bd-05d4-4790-bedb-44c8eced34aa",
+    "title": "Thẻ Quà Tặng Đặc Biệt: Go2Joy 100k",
+    "category": "LIFESTYLE_SERVICES",
+    "desc": "Với Go2Joy, thế giới nghỉ ngơi và du lịch trở nên thật nhỏ bé, gọn trong lòng bàn tay bạn. Đây là người bạn đồng hành lý tưởng mỗi khi bạn cần tìm một..."
+  },
+  {
+    "id": "b6af8799-d636-4309-8da8-7dda7b9606a0",
+    "title": "Phiếu quà tặng Pizza 4P's 100k (Bản sao 1)",
+    "category": "FOOD_DRINK",
+    "desc": "4P's có nghĩa \"For Peace\" - cho Hòa Bình tràn ngập trên toàn thế giới.\r Tham vọng ở Pizza 4P's không chỉ đơn giản là \"Một nhà hàng Pizza tuyệt vời\" mà..."
+  },
+  {
+    "id": "f3d0e96f-1817-4bc9-adf4-30aa467072a7",
+    "title": "Phiếu quà tặng Dottie 200k (Bản sao 1)",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Thành lập vào năm 2013, chúng tôi tự hào là một trong những thương hiệu thời trang thiết kế đầu tiên của người Việt trẻ. Khởi đầu với mong muốn được m..."
+  },
+  {
+    "id": "5b1bda17-3349-4691-8ecf-1501f2f4e83b",
+    "title": "Phiếu quà tặng Dottie 50k (Bản sao 1)",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Thành lập vào năm 2013, chúng tôi tự hào là một trong những thương hiệu thời trang thiết kế đầu tiên của người Việt trẻ. Khởi đầu với mong muốn được m..."
+  },
+  {
+    "id": "36486fad-2d39-4be0-a697-6d518e7012bb",
+    "title": "Phiếu Quà Tặng Trị Liệu Toàn Thân (60 phút) (Bản sao 1)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Chào mừng bạn đến với Coco Spa - cửa hàng Spa cao cấp tại quận 1, nơi cung cấp những trải nghiệm thư giãn tuyệt vời và phụ hồi sức khỏe toàn diện. Từ ..."
+  },
+  {
+    "id": "709a0b32-1853-4180-aa5c-5e994a287b78",
+    "title": "[Giftpop] Phiếu quà tặng TOUS les JOURS 100K (Bản sao 2)",
+    "category": "FOOD_DRINK",
+    "desc": "Với sự ra đời của cửa hàng đầu tiên tại Việt Nam vào năm 2007, chuỗi cửa hàng TOUS les JOURS khẳng định vị trí dẫn đầu trong phân khúc cao cấp bánh và..."
+  },
+  {
+    "id": "afe271bb-96a1-4083-af37-c3848f73b81b",
+    "title": "Phiếu Quà Tặng Trị Liệu Toàn Thân (60 phút)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Chào mừng bạn đến với Coco Spa - cửa hàng Spa cao cấp tại quận 1, nơi cung cấp những trải nghiệm thư giãn tuyệt vời và phụ hồi sức khỏe toàn diện. Từ ..."
+  },
+  {
+    "id": "98c60c22-1656-4c6e-a487-784b6b1f1717",
+    "title": "Thẻ Quà Tặng Đặc Biệt: Westway Dental 200k",
+    "category": "BEAUTY_HEALTH",
+    "desc": "VIỆN NHA KHOA QUỐC TẾ WESTWAY - CHUỖI NHA KHOA CAO CẤP CHUẨN 5 SAO - GIÁ CỦA MỌI NHÀ\r Viện Nha Khoa Quốc Tế Westway là một trong những chuỗi nha khoa ..."
+  },
+  {
+    "id": "529bb7b9-b31c-4d9c-94a4-a753a2d3be05",
+    "title": "Vé xem phim 2D tất cả các ngày trong tuần (Bản sao 1)",
+    "category": "ENTERTAINMENT",
+    "desc": "Mùa phim “bom tấn” đang đến gần, liệu có tiếc chăng vì giá mà bạn bỏ qua những bộ phim “đỉnh” của năm. Đừng manh động, vì Giftpop đã có chính sách về ..."
+  },
+  {
+    "id": "dce28d86-511f-4db2-b23e-d6e289ca2d5c",
+    "title": "[Giftpop] Phiếu Quà Tặng Khu Vui Chơi Công Viên Văn Hoá Suối Tiên 500K (Bản sao 1)",
+    "category": "ENTERTAINMENT",
+    "desc": "Công Viên Văn Hóa Suối Tiên với đa dạng các công trình kiến trúc mang đậm nét văn hóa, lịch sử dân tộc cùng trò chơi hấp dẫn, mới lạ với 7 điểm chính ..."
+  },
+  {
+    "id": "61100ce6-4f67-477e-80a8-78e921025733",
+    "title": "Phiếu quà tặng Go2Joy 100k (Bản sao 1)",
+    "category": "LIFESTYLE_SERVICES",
+    "desc": "Với Go2Joy, thế giới nghỉ ngơi và du lịch trở nên thật nhỏ bé, gọn trong lòng bàn tay bạn. Đây là người bạn đồng hành lý tưởng mỗi khi bạn cần tìm một..."
+  },
+  {
+    "id": "72f6e649-8908-46ac-b861-e1cf22426263",
+    "title": "Phiếu quà tặng Pizza 4P's 100k (Bản sao 2)",
+    "category": "FOOD_DRINK",
+    "desc": "4P's có nghĩa \"For Peace\" - cho Hòa Bình tràn ngập trên toàn thế giới.\r Tham vọng ở Pizza 4P's không chỉ đơn giản là \"Một nhà hàng Pizza tuyệt vời\" mà..."
+  },
+  {
+    "id": "30278179-7c80-4002-913a-73849db2ac60",
+    "title": "Cheese Burger Set (Bản sao 2)",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "38c1011e-7be8-4c11-a6fa-de9c9fd0b3ea",
+    "title": "Combo Beef Spaghetti (Tặng Kèm Nước)",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "2a11bcc0-160b-43b5-9268-35a0f011b0ad",
+    "title": "Thẻ Quà Tặng Đặc Biệt: K-Market 100k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Phiếu quà tặng K-Market với nhiều mệnh giá sẽ là giải pháp hoàn hảo cho doanh nghiệp dùng tặng hoặc thưởng cho nhân viên, cũng sẽ là món quà ý nghĩa v..."
+  },
+  {
+    "id": "58d52c92-8984-40e6-854b-f2022fafc9f2",
+    "title": "Flash Sale: Dottie 50k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Thành lập vào năm 2013, chúng tôi tự hào là một trong những thương hiệu thời trang thiết kế đầu tiên của người Việt trẻ. Khởi đầu với mong muốn được m..."
+  },
+  {
+    "id": "de0bd4b2-c258-454f-a1e9-b79e7af453d3",
+    "title": "Vé xem phim 2D CGV các ngày trong tuần (thứ 2 ~ CN) (Tặng Kèm Nước)",
+    "category": "ENTERTAINMENT",
+    "desc": "Tin vui cho các fan phim ảnh, nhất là fan của cụm rạp CGV. Các bạn sẽ được tận hưởng những giây phút thoải mái nhất với những bộ phim mới nhất cùng mộ..."
+  },
+  {
+    "id": "d6e0d6eb-318d-4465-b8f5-4bb5ad0fc8cf",
+    "title": "Phiếu quà tặng Pizza 4P's 500k (Bản sao 2)",
+    "category": "FOOD_DRINK",
+    "desc": "4P's có nghĩa \"For Peace\" - cho Hòa Bình tràn ngập trên toàn thế giới.\r Tham vọng ở Pizza 4P's không chỉ đơn giản là \"Một nhà hàng Pizza tuyệt vời\" mà..."
+  },
+  {
+    "id": "6337a93f-0de6-44f8-9b34-afb69561ad76",
+    "title": "[Giftpop] Phiếu quà tặng TOUS les JOURS 500K - Khuyến Mãi Khai Trương",
+    "category": "FOOD_DRINK",
+    "desc": "Với sự ra đời của cửa hàng đầu tiên tại Việt Nam vào năm 2007, chuỗi cửa hàng TOUS les JOURS khẳng định vị trí dẫn đầu trong phân khúc cao cấp bánh và..."
+  },
+  {
+    "id": "ca230345-b8a0-4add-928a-24f51bf5894b",
+    "title": "Phiếu quà tặng Cộng Cà Phê 50k (Bản sao 2)",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá,\r Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé!\r Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạ..."
+  },
+  {
+    "id": "eefa7a61-3836-4c9b-89e1-45655f637075",
+    "title": "[Giftpop] Phiếu quà tặng TOUS les JOURS 100K (Bản sao 1)",
+    "category": "FOOD_DRINK",
+    "desc": "Với sự ra đời của cửa hàng đầu tiên tại Việt Nam vào năm 2007, chuỗi cửa hàng TOUS les JOURS khẳng định vị trí dẫn đầu trong phân khúc cao cấp bánh và..."
+  },
+  {
+    "id": "12fd046a-b465-4203-9b16-656afd838504",
+    "title": "Phiếu quà tặng Y Tế H Plus 500.000 VNĐ (Bản sao 1)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Ưu đãi đặc biệt dành cho Quý khách hàng!\r Khi đến thăm khám tại phòng khám đa khoa Hplus, Quý khách sử dụng voucher tiền mặt cho các dịch vụ khám chữa..."
+  },
+  {
+    "id": "2e286a4e-9c15-484d-94e3-826e75c1dbbd",
+    "title": "Combo Beef Spaghetti (Dành Cho 2 Người)",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "a8b9876d-8623-47cc-b407-7883753bb959",
+    "title": "Phiếu quà tặng K-Market 500k (Bản sao 1)",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Phiếu quà tặng K-Market với nhiều mệnh giá sẽ là giải pháp hoàn hảo cho doanh nghiệp dùng tặng hoặc thưởng cho nhân viên, cũng sẽ là món quà ý nghĩa v..."
+  },
+  {
+    "id": "54c2d467-ae23-405f-b002-051fbd40f9f4",
+    "title": "Combo 2 Vé xem phim 2D CGV các ngày trong tuần (thứ 2 ~ CN) (Bản sao 1)",
+    "category": "ENTERTAINMENT",
+    "desc": "Combo 2 Vé xem phim 2D CGV các ngày trong tuần (thứ 2 ~ CN)\r Tin vui cho các fan phim ảnh, nhất là fan của cụm rạp CGV. Các bạn sẽ được tận hưởng nhữn..."
+  },
+  {
+    "id": "efaf2e20-d751-4a61-8492-063027fb1c2c",
+    "title": "Phiếu quà tặng K-Market 500k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Phiếu quà tặng K-Market với nhiều mệnh giá sẽ là giải pháp hoàn hảo cho doanh nghiệp dùng tặng hoặc thưởng cho nhân viên, cũng sẽ là món quà ý nghĩa v..."
+  },
+  {
+    "id": "fe42adff-eeb5-44fa-b72e-6f60f50d58a1",
+    "title": "Phiếu Quà Tặng Trị Liệu Chân (90 phút)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Chào mừng bạn đến với Coco Spa - cửa hàng Spa cao cấp tại quận 1, nơi cung cấp những trải nghiệm thư giãn tuyệt vời và phụ hồi sức khỏe toàn diện. Từ ..."
+  },
+  {
+    "id": "bdd893bd-2891-4f11-8f59-574e7a9488fd",
+    "title": "Thẻ Quà Tặng Đặc Biệt: Cộng Cà Phê 50k",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá,\r Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé!\r Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạ..."
+  },
+  {
+    "id": "727ad782-56a7-4de9-b59c-27870bcbc0a1",
+    "title": "Vé xem phim 2D tất cả các ngày trong tuần",
+    "category": "ENTERTAINMENT",
+    "desc": "Mùa phim “bom tấn” đang đến gần, liệu có tiếc chăng vì giá mà bạn bỏ qua những bộ phim “đỉnh” của năm. Đừng manh động, vì Giftpop đã có chính sách về ..."
+  },
+  {
+    "id": "7f822118-8cbd-48d8-976e-517c3ee2ae25",
+    "title": "Phiếu quà tặng Cộng Cà Phê 100k",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá,\r Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé!\r Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạ..."
+  },
+  {
+    "id": "498c0301-e49b-4c44-8d8d-06db6b94d58b",
+    "title": "Phiếu quà tặng Hoa Yêu Thương 100K",
+    "category": "LIFESTYLE_SERVICES",
+    "desc": "Hoa Yêu Thương là bông hoa được ghép từ nhiều trái tim với mong muốn kêu gọi mọi người hãy chia sẻ yêu thương nhiều hơn. Cuộc sống sẽ tốt hơn rất nhiề..."
+  },
+  {
+    "id": "8a0ad1a3-bd73-430e-b82d-6c2a7543a22c",
+    "title": "Burger Set",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "a5933c6f-5f2c-4548-afa0-b0096b418332",
+    "title": "Phiếu quà tặng Cộng Cà Phê 50k (Bản sao 1)",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá,\r Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé!\r Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạ..."
+  },
+  {
+    "id": "8c83228c-7e25-441a-8c7e-0fd7433734d7",
+    "title": "Gói VIP - Bác Tôm 100k",
+    "category": "SHOPPING_RETAIL",
+    "desc": "\"Hôm nay ăn gì?\" tuy là câu hỏi không khó nhưng chắc hẳn đã làm đau đầu không ít các bà nội trợ trong các bữa cơm hàng ngày, vì phải đứng trước thị tr..."
+  },
+  {
+    "id": "adb1530d-e23a-439b-92e2-931e772f0053",
+    "title": "Trị Liệu Chân (90 phút) (Tặng Kèm Nước)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Chào mừng bạn đến với Coco Spa - cửa hàng Spa cao cấp tại quận 1, nơi cung cấp những trải nghiệm thư giãn tuyệt vời và phụ hồi sức khỏe toàn diện. Từ ..."
+  },
+  {
+    "id": "b9c3fb96-7c43-4141-86ab-c4b4700c0af8",
+    "title": "Flash Sale: Trị Liệu Toàn Thân (60 phút)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Chào mừng bạn đến với Coco Spa - cửa hàng Spa cao cấp tại quận 1, nơi cung cấp những trải nghiệm thư giãn tuyệt vời và phụ hồi sức khỏe toàn diện. Từ ..."
+  },
+  {
+    "id": "57fd949b-390c-46c2-8dac-85c81eec8b61",
+    "title": "Tẩy Trắng Răng Laser Whitening Từ Đức (Dành Cho 2 Người)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Mang trong mình niềm tin về sứ mệnh đánh thức vẻ đẹp tiềm ẩn trong mỗi người qua những nụ cười trắng sáng đều đẹp, hệ thống nha khoa hàng đầu Việt Nam..."
+  },
+  {
+    "id": "cb88a322-ad8f-4e53-8cfc-94d0926acaa5",
+    "title": "Extrim 200k (Dành Cho 2 Người)",
+    "category": "LIFESTYLE_SERVICES",
+    "desc": "EXTRIM - VỆ SINH SỬA CHỮA GIÀY TÚI TOÀN DIỆN\r Với hơn 7 năm kinh nghiệm, Extrim tự hào là một trong những nơi chăm sóc giày uy tín và tốt nhất Thành P..."
+  },
+  {
+    "id": "6b427747-f05e-492f-984d-f5095b4b0e8c",
+    "title": "Phiếu quà tặng Cộng Cà Phê 100k (Bản sao 1)",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá,\r Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé!\r Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạ..."
+  },
+  {
+    "id": "adefa3ed-d761-4393-8b37-860b381ca992",
+    "title": "Flash Sale: Cộng Cà Phê 50k",
+    "category": "FOOD_DRINK",
+    "desc": "Nhịp sống đôi khi ồn ào, tấp nập quá,\r Thanh xuân mình dừng chân nghỉ ngơi ở Cộng Anh nhé!\r Với không gian gần gũi, thân thuộc với chất liệu gỗ mộc mạ..."
+  },
+  {
+    "id": "0db7db50-8c14-4f44-8429-63763d0c83af",
+    "title": "Phiếu quà tặng Extrim 200k (Bản sao 1)",
+    "category": "LIFESTYLE_SERVICES",
+    "desc": "EXTRIM - VỆ SINH SỬA CHỮA GIÀY TÚI TOÀN DIỆN\r Với hơn 7 năm kinh nghiệm, Extrim tự hào là một trong những nơi chăm sóc giày uy tín và tốt nhất Thành P..."
+  },
+  {
+    "id": "7737bf0c-7c24-482b-abac-fe76c5af90f2",
+    "title": "Phiếu Quà Tặng Mala Panda 200.000 VND",
+    "category": "FOOD_DRINK",
+    "desc": "Mala Panda là chuỗi nhà hàng chuyên về ẩm thực Tứ Xuyên, nổi bật với món lẩu Malatang tự chọn và các món xào theo phong cách \"gắp & cân\". Nhà hàng man..."
+  },
+  {
+    "id": "d062d7b9-8924-4f0d-9f98-2fceef1b8df0",
+    "title": "Phiếu Quà Tặng Trị Liệu Trẻ Em (60 phút)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Chào mừng bạn đến với Coco Spa - cửa hàng Spa cao cấp tại quận 1, nơi cung cấp những trải nghiệm thư giãn tuyệt vời và phụ hồi sức khỏe toàn diện. Từ ..."
+  },
+  {
+    "id": "15d33ba6-5349-46f7-b710-326c54ab5720",
+    "title": "Phiếu Quà Tặng Nha Khoa Smile Beauty 100K",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Mang trong mình niềm tin về sứ mệnh đánh thức vẻ đẹp tiềm ẩn trong mỗi người qua những nụ cười trắng sáng đều đẹp, hệ thống nha khoa hàng đầu Việt Nam..."
+  },
+  {
+    "id": "f35f5257-daed-453f-a54e-0fd4cd9fec32",
+    "title": "Voucher Giờ Vàng: [Giftpop] Phiếu quà tặng TOUS les JOURS 100K",
+    "category": "FOOD_DRINK",
+    "desc": "Với sự ra đời của cửa hàng đầu tiên tại Việt Nam vào năm 2007, chuỗi cửa hàng TOUS les JOURS khẳng định vị trí dẫn đầu trong phân khúc cao cấp bánh và..."
+  },
+  {
+    "id": "95f76fda-76ed-4f85-a1b2-f8c05d014581",
+    "title": "Dottie 200k (Tặng Kèm Nước)",
+    "category": "SHOPPING_RETAIL",
+    "desc": "Thành lập vào năm 2013, chúng tôi tự hào là một trong những thương hiệu thời trang thiết kế đầu tiên của người Việt trẻ. Khởi đầu với mong muốn được m..."
+  },
+  {
+    "id": "fd698ca9-88a1-4dff-9788-e46808141825",
+    "title": "Cheese Burger Set (Bản sao 1)",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  },
+  {
+    "id": "521da64f-4cf3-449f-8f46-a79dca6cb3e6",
+    "title": "Phiếu Quà Tặng Trị Liệu Trẻ Em (60 phút) (Bản sao 1)",
+    "category": "BEAUTY_HEALTH",
+    "desc": "Chào mừng bạn đến với Coco Spa - cửa hàng Spa cao cấp tại quận 1, nơi cung cấp những trải nghiệm thư giãn tuyệt vời và phụ hồi sức khỏe toàn diện. Từ ..."
+  },
+  {
+    "id": "f5fa4a33-c15d-425c-bc00-8ad19741de05",
+    "title": "Thẻ Quà Tặng Đặc Biệt: L-Chicken Burger",
+    "category": "FOOD_DRINK",
+    "desc": "Nếu bạn đang băn khoăn tìm kiếm một quán ăn giá cả \"hạt dẻ\", không gian thoáng mát, tiện nghi, đồ ăn ngon, phong phú lựa chọn, sạch sẽ, dù bạn đi ăn m..."
+  }
+]
