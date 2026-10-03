@@ -102,7 +102,7 @@ export class EmailService {
         </div>
       `;
 
-      // 1. NẾU CÓ BREVO_API_KEY -> Gửi qua API HTTP của Brevo (Chống rớt mạng trên Railway)
+      // 1. NẾU CÓ BREVO_API_KEY -> Gửi qua API HTTP của Brevo
       if (process.env.BREVO_API_KEY) {
         try {
           const response = await fetch('https://api.brevo.com/v3/smtp/email', {
